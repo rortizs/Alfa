@@ -14,10 +14,10 @@
            $email = $row['email'];
            $cargo = $row['cargo'];
            $username = $row['username'];
-           $contrasena = $row['contrasena'];
+           $password = $row['password'];
            $imagen = $row['imagen'];
            $estado = $row['estado'];
-           $contrasena2 = $row['contrasena2'];
+           $password2 = $row['password2'];
        }
      }
 
@@ -31,25 +31,25 @@
         $email = $_POST['email'];
         $cargo = $_POST['cargo'];
         $username = $_POST['username'];
-        $contrasena = $_POST['contrasena'];
+        $password = $_POST['password'];
         $imagen = $_POST['imagen'];
         $estado = $_POST['estado'];
-        $contrasena2 = $_POST['contrasena2'];
+        $password2 = $_POST['password2'];
       
         $query = "UPDATE usuarios set nombre = '$nombre', no_documento = '$no_documento', direccion = '$direccion', telefono = '$telefono',
-        email = '$email', cargo = '$cargo', username = '$username', contrasena = '$contrasena', imagen = '$imagen', estado = '$estado',  
-        contrasena2 = '$contrasena2' WHERE id=$id";
+        email = '$email', cargo = '$cargo', username = '$username', password = '$password', imagen = '$imagen', estado = '$estado',  
+        password2 = '$password' WHERE id=$id";
         mysqli_query($conn, $query);
         $_SESSION['message'] = 'Usuario Actualizado';
         $_SESSION['message_type'] = 'success';
-        header('Location: crearusuario.html');
+        header('Location: tablausuario.html');
       }
 
 
 
 ?>
 
-<?php include('vistas/dist/crearusuario.html'); ?>
+
 <div class="container p-4">
   <div class="row">
     <div class="col-md-4 mx-auto">
@@ -74,7 +74,7 @@
           <input name="cargo" type="text" class="form-control" value="<?php echo $cargo; ?>" placeholder="Cargo">
            </div>
            <div class="form-group">
-          <input name="contrasena" type="password" class="form-control" value="<?php echo $contrasena; ?>" placeholder="Contraseña">
+          <input name="password" type="password" class="form-control" value="<?php echo $password; ?>" placeholder="Contraseña">
            </div>
            <div class="form-group">
           <input name="imagen" type="text" class="form-control" value="<?php echo $imagen; ?>" placeholder="Imagen">
@@ -83,7 +83,7 @@
           <input name="estado" type="text" class="form-control" value="<?php echo $estado; ?>" placeholder="Estado">
            </div>
            <div class="form-group">
-          <input name="contrasena2" type="password" class="form-control" value="<?php echo $contrasena2; ?>" placeholder="Contraseña 2">
+          <input name="password2" type="password" class="form-control" value="<?php echo $password2; ?>" placeholder="Contraseña 2">
            </div>
             
               <button class="btn btn-info" name="update">

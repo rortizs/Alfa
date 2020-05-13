@@ -71,12 +71,69 @@
                     </div>
                 </nav>
             </div>
+            <?php include ("db_user.php")
+?>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">DETALES MH</h1>
-                        <br></br>
-                        
+                        <h1 class="mt-4">DETALLES MH</h1>
+
+                        <div class="col-md-8">
+            <table class="table table-bordered">
+                 <thead>
+                      <tr>
+                      <br></br>
+                             <th>Nombre</th>
+                             <th>No. Documento</th>
+                             <th>Direccion</th>
+                             <th>Teléfono</th>
+                             <th>Email</th>
+                             <th>Cargo</th>
+                             <th>Username</th>
+                             <th>Password</th>
+                             <th>Imagen</th>
+                             <th>Estado</th>
+                             <th>Password2</th>
+                      </tr>
+                 </thead> 
+                 <tbody>
+                     <?php 
+                       $query = "SELECT * FROM usuarios";
+                       $result_usuarios = mysqli_query($conn, $query);
+                       
+                       while ($row = mysqli_fetch_array($result_usuarios)) { ?>
+                             <tr>
+                                 <td><?php echo $row['nombre'] ?></td>
+                                 <td><?php echo $row['no_documento'] ?></td>
+                                 <td><?php echo $row['direccion'] ?></td>
+                                 <td><?php echo $row['telefono'] ?></td>
+                                 <td><?php echo $row['email'] ?></td>
+                                 <td><?php echo $row['cargo'] ?></td>
+                                 <td><?php echo $row['username'] ?></td>
+                                 <td><?php echo $row['password'] ?></td>
+                                 <td><?php echo $row['imagen'] ?></td>
+                                 <td><?php echo $row['estado'] ?></td>
+                                 <td><?php echo $row['password2'] ?></td>
+                                 <td>
+                                      <a href="edit_user.php?id=<?php echo $row['id']?>" class="btn
+                                       btn-success">
+                                      Editar
+                                      </a>
+                                      <a href="delete_user.php?id=<?php echo $row['id']?>" class="btn
+                                       btn-dark">
+                                      Eliminar
+                                      </a>
+                                 </td>
+                             </tr>  
+
+                       <?php } ?>
+                 </tbody>
+            </table>
+       </div>
+    </div>
+
+</div>
+
                             
                         
         </div>
