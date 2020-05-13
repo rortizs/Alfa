@@ -74,13 +74,13 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">DETALES MH</h1>
+                        <h1 class="mt-4">DETALLES MH</h1>
                        
                         <?php include ("db_user.php")
 ?>
                         <div class="container-fluid">
                             <div class="row">
-                               <div class="col-md-5">
+                               <div class="col-md-10">
                         
                                   <?php if (isset($_SESSION['message'])){ ?>
                                          <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show" role="alert">
@@ -90,53 +90,89 @@
                                          </button>
                                          </div>
                                   <?php session_unset();} ?> 
-                                    <div class="card card-body">
-                                    
-                                      <form action="save_user.php" method="POST">
+                                  <div class="card card-body">
+                                  <form action="save_user.php" method="POST">
+                                  <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">Ingresar datos para la creacion del usuario</h4>
+      <form class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" name="nombre" class="form-control"
+                                               placeholder="" autofocus>
+            <div class="invalid-feedback">   
+           Se requiere un nombre válido.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="no_documento">No. Documento</label>
+            <input type="text" name="no_documento" class="form-control"
+                                               placeholder="" autofocus>
+            <div class="invalid-feedback">   
+           Se requiere un número de documento válido.
+            </div>
+          </div>
+        </div>
                                         <div class="form-group">
-                                               <input type="text" name="nombre" class="form-control"
-                                               placeholder="Nombre" autofocus>
-                                        </div>  
-                                        <div class="form-group">
-                                               <input type="text" name="no_documento" class="form-control"
-                                               placeholder="No. Documento" autofocus>
-                                        </div> 
-                                        <div class="form-group">
+                                        <label for="direccion" class="control-label">Dirección</label>
                                                <input type="text" name="direccion" class="form-control"
-                                               placeholder="Direccion" autofocus>
+                                               placeholder="Eje. Ciudad" autofocus>
                                         </div> 
+                                        
                                         <div class="form-group">
+                                        <label for="telefono" class="control-label">Teléfono</label>
                                                <input type="text" name="telefono" class="form-control"
-                                               placeholder="Teléfono" autofocus>
+                                               placeholder="" autofocus>
                                         </div> 
                                         <div class="form-group">
+                                        <label for="email" class="control-label">Email</label>
                                                <input type="text" name="email" class="form-control"
-                                               placeholder="Email" autofocus>
+                                               placeholder="ejemplo@gmail.com" autofocus>
                                         </div> 
-                                        <div class="form-group">
-                                               <input type="text" name="cargo" class="form-control"
-                                               placeholder="Cargo" autofocus>
-                                        </div> 
-                                        <div class="form-group">
-                                               <input type="text" name="username" class="form-control"
-                                               placeholder="User" autofocus>
-                                        </div> 
+                                        
+     
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="cargo">Cargo</label>
+            <input type="text" name="cargo" class="form-control"
+                                               placeholder="" autofocus>
+                                               <div class="invalid-feedback">   
+           Se requiere un cargo válido.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="username">Username</label>
+            <input type="text" name="username" class="form-control"
+                                               placeholder="@usuario" autofocus>
+                                               <div class="invalid-feedback">   
+           Se requiere un usuario válido.
+            </div>
+          </div>
+        </div>
+                                         <label for="password" class="control-label">Contraseña</label>
                                         <div class="form-group">
                                                <input type="password" name="password" class="form-control"
-                                               placeholder="Contraseña" autofocus>
+                                               placeholder="" autofocus>
                                         </div> 
+                                        <div class="form-group"> 
+                                        <label for="imagen" class="control-label">Imagen</label>
+                                        <select class="form-control" id="imagen">
+                                        <option value="i1">imagen1</option>
+                                        <option value="i2">imagen2</option>
+                                        <option value="i3">imagen3</option>
+                                        </select>                    
+                                        </div>
                                         <div class="form-group">
-                                               <input type="text" name="imagen" class="form-control"
-                                               placeholder="Imagen" autofocus>
-                                        </div> 
-                                        <div class="form-group">
+                                        <label for="estado" class="control-label">Estado</label>
                                                <input type="text" name="estado" class="form-control"
-                                               placeholder="Estado" autofocus>
+                                               placeholder="" autofocus>
                                         </div> 
                                         <div class="form-group">
+                                        <label for="password2" class="control-label">Contraseña</label>
                                                <input type="password" name="password2" class="form-control"
-                                               placeholder="Contraseña 2" autofocus>
+                                               placeholder="" autofocus>
                                         </div> 
+           
                                          
                                              <input type="submit" class="btn btn-dark btn-block"
                                              name="save_user" value="Guardar">
