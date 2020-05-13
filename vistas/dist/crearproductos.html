@@ -84,7 +84,72 @@
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALLES MH</h1>
 
-
+                        <?php include ("db_user.php")
+    ?>
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                       <div class="col-md-10">
+                                                
+                                                          <?php if (isset($_SESSION['message'])){ ?>
+                                                                 <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show" role="alert">
+                                                                 <?= $_SESSION['message'] ?>
+                                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                                       <span aria-hidden="true">&times;</span>
+                                                                 </button>
+                                                                 </div>
+                                                          <?php session_unset();} ?> 
+                                                          <div class="card card-body">
+                                                          <form action="save_producto.php" method="POST">
+                                                          <div class="col-md-8 order-md-1">
+                              <h4 class="mb-3">Ingresar datos para la creacion de Productos</h4>
+                              <form class="needs-validation" novalidate>
+                                <div class="row">
+                                  <div class="col-md-6 mb-3">
+                                    <label for="nombre">Nombre del Producto</label>
+                                    <input type="text" name="nombre" class="form-control"
+                                                                       placeholder="" autofocus>
+                                    <div class="invalid-feedback">   
+                                   Se requiere un nombre válido.
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6 mb-3">
+                                    <label for="numero_documento">Codigo</label>
+                                    <input type="text" name="numero_documento" class="form-control"
+                                                                       placeholder="" autofocus>
+                                    <div class="invalid-feedback">   
+                                   Se requiere un codigo válido.
+                                    </div>
+                                  </div>
+                                </div>
+                                                                <div class="form-group">
+                                                                <label for="direccion" class="control-label">Stock</label>
+                                                                       <input type="text" name="direccion" class="form-control"
+                                                                       placeholder="" autofocus>
+                                                                </div> 
+                                                                
+                                                                <div class="form-group">
+                                                                <label for="telefono" class="control-label">Descripcion</label>
+                                                                       <input type="text" name="telefono" class="form-control"
+                                                                       placeholder="" autofocus>
+                                                                </div> 
+                                                                <div class="form-group">
+                                                                <label for="email" class="control-label">Imagen</label>
+                                                                       <input type="text" name="email" class="form-control"
+                                                                       placeholder="" autofocus>
+                                                                </div> 
+                                                                
+                             
+                               
+                                   
+                                                                 
+                                                                     <input type="submit" class="btn btn-dark btn-block"
+                                                                     name="save_producto" value="Guardar">
+                                                              </form>
+                                                              
+                                                            </div>
+                                                
+                                                       </div>
+                                                
 
 
 

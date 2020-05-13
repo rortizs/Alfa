@@ -17,7 +17,7 @@
         $nombre_permiso = $_POST['nombre_permiso'];
       
       
-        $query = "UPDATE permisos set id = '$id', nombre_permiso = '$nombre_permiso',  
+        $query = "UPDATE permisos set id = '$id', nombre_permiso = '$nombre_permiso' 
        WHERE id=$id";
         mysqli_query($conn, $query);
         $_SESSION['message'] = 'Permiso Actualizado';
@@ -39,7 +39,7 @@
           <input name="id" type="text" class="form-control" value="<?php echo $id; ?>" placeholder="Id">
            </div>
            <div class="form-group">
-          <input name="nombre_permiso" type="text" class="form-control" value="<?php echo $nombre_permiso; ?>" placeholder="Nombre permiso">
+          <input name="nombre_permiso" type="text" class="form-control" value="<?php echo $nombre_permiso; ?>" placeholder="Nombre Permiso">
            </div>
          
             
