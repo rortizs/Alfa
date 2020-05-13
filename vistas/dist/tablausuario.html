@@ -71,37 +71,37 @@
                     </div>
                 </nav>
             </div>
-            <?php include ("db_user.php")
-?>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALLES MH</h1>
-
-                        <div class="col-md-8">
+            <?php include ("db_user.php")
+?>
+            <div class="col-md-8">
             <table class="table table-bordered">
                  <thead>
                       <tr>
                       <br></br>
                              <th>Nombre</th>
-                             <th>No. Documento</th>
+                             <th>No. Documento </th>
                              <th>Direccion</th>
                              <th>Teléfono</th>
                              <th>Email</th>
                              <th>Cargo</th>
                              <th>Username</th>
-                             <th>Password</th>
+                             <th>Contraseña</th>
                              <th>Imagen</th>
                              <th>Estado</th>
-                             <th>Password2</th>
+                             <th>Contraseña 2</th>
+                             
                       </tr>
                  </thead> 
                  <tbody>
                      <?php 
                        $query = "SELECT * FROM usuarios";
-                       $result_usuarios = mysqli_query($conn, $query);
+                       $result = mysqli_query($conn, $query);
                        
-                       while ($row = mysqli_fetch_array($result_usuarios)) { ?>
+                       while ($row = mysqli_fetch_array($result)) { ?>
                              <tr>
                                  <td><?php echo $row['nombre'] ?></td>
                                  <td><?php echo $row['no_documento'] ?></td>
@@ -115,13 +115,13 @@
                                  <td><?php echo $row['estado'] ?></td>
                                  <td><?php echo $row['password2'] ?></td>
                                  <td>
-                                      <a href="edit_user.php?id=<?php echo $row['id']?>" class="btn
+                                 <a href="edit_user.php?id=<?php echo $row['id']?>" class="btn
                                        btn-success">
-                                      Editar
+                                      Actualizar Usuario
                                       </a>
                                       <a href="delete_user.php?id=<?php echo $row['id']?>" class="btn
                                        btn-dark">
-                                      Eliminar
+                                      Eliminar Usuario
                                       </a>
                                  </td>
                              </tr>  
