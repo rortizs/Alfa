@@ -37,7 +37,7 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Crear Usuarios</div>
+                            <div class="sb-sidenav-menu-heading">Crear Proveedores</div>
                             
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 >
@@ -75,8 +75,76 @@
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALES MH</h1>
-                        <br></br>
-                        
+                
+                            <main>
+                               
+                                   
+                                    <?php include ("db_proveedor.php")
+            ?>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                           <div class="col-md-10">
+                                    
+                                              <?php if (isset($_SESSION['message'])){ ?>
+                                                     <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show" role="alert">
+                                                     <?= $_SESSION['message'] ?>
+                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                           <span aria-hidden="true">&times;</span>
+                                                     </button>
+                                                     </div>
+                                              <?php session_unset();} ?> 
+                                              <div class="card card-body">
+                                              <form action="save_user.php" method="POST">
+                                              <div class="col-md-8 order-md-1">
+                  <h4 class="mb-3">Ingresar datos para la creacion del Proveedor</h4>
+                  <form class="needs-validation" novalidate>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="nombre">Nombre del Proveedor</label>
+                        <input type="text" name="nombre" class="form-control"
+                                                           placeholder="" autofocus>
+                        <div class="invalid-feedback">   
+                       Se requiere un nombre válido.
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="no_documento">No. Documento</label>
+                        <input type="text" name="no_documento" class="form-control"
+                                                           placeholder="" autofocus>
+                        <div class="invalid-feedback">   
+                       Se requiere un número de documento válido.
+                        </div>
+                      </div>
+                    </div>
+                                                    <div class="form-group">
+                                                    <label for="direccion" class="control-label">Dirección</label>
+                                                           <input type="text" name="direccion" class="form-control"
+                                                           placeholder="Eje. Ciudad" autofocus>
+                                                    </div> 
+                                                    
+                                                    <div class="form-group">
+                                                    <label for="telefono" class="control-label">Teléfono</label>
+                                                           <input type="text" name="telefono" class="form-control"
+                                                           placeholder="" autofocus>
+                                                    </div> 
+                                                    <div class="form-group">
+                                                    <label for="email" class="control-label">Email</label>
+                                                           <input type="text" name="email" class="form-control"
+                                                           placeholder="ejemplo@gmail.com" autofocus>
+                                                    </div> 
+                                                    
+                 
+                   
+                       
+                                                     
+                                                         <input type="submit" class="btn btn-dark btn-block"
+                                                         name="save_proveedor" value="Guardar">
+                                                  </form>
+                                                  
+                                                </div>
+                                    
+                                           </div>
+                                    
                             
                         
         </div>
