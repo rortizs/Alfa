@@ -85,18 +85,18 @@
                                               <tr>
                                               <br></br>
                                                      <th>Id</th>
-                                                     <th>Nombre permiso</th>
+                                                     <th>Nombre Permiso</th>
                                               </tr>
                                          </thead> 
                                          <tbody>
                                              <?php 
-                                               $query = "SELECT * FROM Permisos";
+                                               $query = "SELECT * FROM permisos";
                                                $result_permisos = mysqli_query($conn, $query);
                                                
                                                while ($row = mysqli_fetch_array($result_permisos)) { ?>
                                                      <tr>
-                                                         <td><?php echo $row['Id'] ?></td>
-                                                         <td><?php echo $row['Nombre permiso'] ?></td>
+                                                         <td><?php echo $row['id'] ?></td>
+                                                         <td><?php echo $row['nombre_permiso'] ?></td>
                                                          <td>
                                                               <a href="edit_permiso.php?id=<?php echo $row['id']?>" class="btn
                                                                btn-success">
