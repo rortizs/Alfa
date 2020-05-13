@@ -178,6 +178,61 @@
                                     </div>
                         
                                </div>
+                               <div class="col-md-8">
+                                <table class="table table-bordered">
+                                     <thead>
+                                          <tr>
+                                          <br></br>
+                                          <th>Nombre</th>
+                                          <th>No. Documento </th>
+                                          <th>Direccion</th>
+                                          <th>Teléfono</th>
+                                          <th>Email</th>
+                                          <th>Cargo</th>
+                                          <th>Username</th>
+                                          <th>Contraseña</th>
+                                          <th>Imagen</th>
+                                          <th>Estado</th>
+                                          <th>Contraseña 2</th>
+                                          </tr>
+                                     </thead> 
+                                     <tbody>
+                                         <?php 
+                                           $query = "SELECT * FROM usuarios";
+                                           $result_tasks = mysqli_query($conn, $query);
+                                           
+                                           while ($row = mysqli_fetch_array($result_tasks)) { ?>
+                                                 <tr>
+                                                 <td><?php echo $row['nombre'] ?></td>
+                                                 <td><?php echo $row['no_documento'] ?></td>
+                                                 <td><?php echo $row['direccion'] ?></td>
+                                                 <td><?php echo $row['telefono'] ?></td>
+                                                 <td><?php echo $row['email'] ?></td>
+                                                 <td><?php echo $row['cargo'] ?></td>
+                                                 <td><?php echo $row['username'] ?></td>
+                                                 <td><?php echo $row['password'] ?></td>
+                                                 <td><?php echo $row['imagen'] ?></td>
+                                                 <td><?php echo $row['estado'] ?></td>
+                                                 <td><?php echo $row['password2'] ?></td>
+                                                     <tr>
+                                                          <a href="edit_user.php?id=<?php echo $row['id']?>" class="btn
+                                                           btn-success">
+                                                          Modificar Usuario
+                                                          </a>
+                                                          <a href="delete_user.php?id=<?php echo $row['id']?>" class="btn
+                                                           btn-dark">
+                                                          Eliminar Usuario
+                                                          </a>
+                                                     </td>
+                                                 </tr>  
+                    
+                                           <?php } ?>
+                                     </tbody>
+                                </table>
+                           </div>
+                        </div>
+                    
+                    </div>
                         
                                                       
                             

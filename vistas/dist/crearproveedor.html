@@ -79,7 +79,7 @@
                             <main>
                                
                                    
-                                    <?php include ("db_proveedor.php")
+                                    <?php include ("db_user.php")
             ?>
                                     <div class="container-fluid">
                                         <div class="row">
@@ -94,7 +94,7 @@
                                                      </div>
                                               <?php session_unset();} ?> 
                                               <div class="card card-body">
-                                              <form action="save_user.php" method="POST">
+                                              <form action="save_proveedor.php" method="POST">
                                               <div class="col-md-8 order-md-1">
                   <h4 class="mb-3">Ingresar datos para la creacion del Proveedor</h4>
                   <form class="needs-validation" novalidate>
@@ -108,8 +108,8 @@
                         </div>
                       </div>
                       <div class="col-md-6 mb-3">
-                        <label for="no_documento">No. Documento</label>
-                        <input type="text" name="no_documento" class="form-control"
+                        <label for="numero_documento">No. Documento</label>
+                        <input type="text" name="numero_documento" class="form-control"
                                                            placeholder="" autofocus>
                         <div class="invalid-feedback">   
                        Se requiere un número de documento válido.
