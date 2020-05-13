@@ -71,20 +71,52 @@
                     </div>
                 </nav>
             </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid">
-                        <h1 class="mt-4">DETALLE MH</h1>
-                        <br></br>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Nombre_permiso</th>
-                                        </tr>
-                                    </thead>
+                        
+                        <?php include ("db_permiso.php")
+        ?>
+                                    <div id="layoutSidenav_content">
+                                        <main>
+                                            <div class="container-fluid">
+                                                <h1 class="mt-4">DETALLES MH</h1>
+                        
+                                                <div class="col-md-8">
+                                    <table class="table table-bordered">
+                                         <thead>
+                                              <tr>
+                                              <br></br>
+                                                     <th>Id</th>
+                                                     <th>Nombre permiso</th>
+                                              </tr>
+                                         </thead> 
+                                         <tbody>
+                                             <?php 
+                                               $query = "SELECT * FROM Permisos";
+                                               $result_permisos = mysqli_query($conn, $query);
+                                               
+                                               while ($row = mysqli_fetch_array($result_permisos)) { ?>
+                                                     <tr>
+                                                         <td><?php echo $row['Id'] ?></td>
+                                                         <td><?php echo $row['Nombre permiso'] ?></td>
+                                                         <td>
+                                                              <a href="edit_permiso.php?id=<?php echo $row['id']?>" class="btn
+                                                               btn-success">
+                                                              Editar
+                                                              </a>
+                                                              <a href="delete_permiso.php?id=<?php echo $row['id']?>" class="btn
+                                                               btn-dark">
+                                                              Eliminar
+                                                              </a>
+                                                         </td>
+                                                     </tr>  
+                        
+                                               <?php } ?>
+                                         </tbody>
+                                    </table>
+                               </div>
+                            </div>
+                        
+                        </div>
+                        
                             
                         
         </div>
