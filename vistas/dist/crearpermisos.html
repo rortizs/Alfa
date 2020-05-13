@@ -12,8 +12,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
+      
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">MENÚ</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
+            <a class="navbar-brand" href="index.html"><font face="sb-sidenav-collapse-arrow">MENÚ</font></a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
             ><!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
@@ -74,10 +75,10 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">DETALLE MH</h1>
+                        <h1 class="mt-4">DETALLES MH</h1>
                         <br></br>
 
-                        <?php include ("db_permiso.php")
+                        <?php include ("db_user.php")
     ?>
                              <div class="container-fluid">
                                   <div class="row">
@@ -92,7 +93,7 @@
                                                                  </div>
                                                           <?php session_unset();} ?> 
                                                           <div class="card card-body">
-                                                          <form action="save_user.php" method="POST">
+                                                          <form action="save_permiso.php" method="POST">
                                                           <div class="col-md-8 order-md-1">
                               <h4 class="mb-3">Ingresar datos para la creacion del permiso</h4>
                               <form class="needs-validation" novalidate>
@@ -109,7 +110,7 @@
                                    
                                                                  
                                                                      <input type="submit" class="btn btn-dark btn-block"
-                                                                     name="save_user" value="Guardar">
+                                                                     name="save_permiso" value="Guardar">
                                                               </form>
                                                               
                                                             </div>
