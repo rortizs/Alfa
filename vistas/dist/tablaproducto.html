@@ -83,6 +83,49 @@
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALLES MH</h1>
+                       
+                        <?php include ("db_user.php")
+                        ?>
+                                  
+                        
+                                                <div class="col-md-8">
+                                    <table class="table table-bordered">
+                                         <thead>
+                                              <tr>
+                                              <br></br>
+                                                     <th>Nombre </th>
+                                                     <th>Codigo</th>
+                                                     <th>Stock</th>
+                                                     <th>Descripcion</th>
+                                                     <th>Imgen</th>
+                                              </tr>
+                                         </thead> 
+                                         <tbody>
+                                             <?php 
+                                               $query = "SELECT * FROM Productos";
+                                               $result_productos = mysqli_query($conn, $query);
+                                               
+                                               while ($row = mysqli_fetch_array($result_productos)) { ?>
+                                                     <tr>
+                                                         <td><?php echo $row['nombre'] ?></td>
+                                                         <td><?php echo $row['codigo'] ?></td>
+                                                         <td><?php echo $row['stock'] ?></td>
+                                                         <td><?php echo $row['description'] ?></td>
+                                                         <td><?php echo $row['imagen'] ?></td>
+                                                         <td>
+                                                              <a href="edit_producto.php?id=<?php echo $row['id']?>" class="btn
+                                                               btn-success">
+                                                              Editar
+                                                              </a>
+                                                              <a href="delete_producto.php?id=<?php echo $row['id']?>" class="btn
+                                                               btn-dark">
+                                                              Eliminar
+                                                              </a>
+                                                         </td>
+                                                     </tr>  
+                        
+                                               <?php } ?> 
+                                                    
 
 
 
