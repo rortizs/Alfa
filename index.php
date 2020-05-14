@@ -12,11 +12,13 @@ if(isset($_SESSION['user'])) {
     $userForm = $_POST['username'];
     $passForm = $_POST['password'];
 
-    $user = new User();
+    
     if($user->userExists($userForm, $passForm)){
         // echo "si coinside";
         $userSession->setCurrentUser($userForm);
         $user->setUser($userForm);
+
+        include_once 'vistas/home.php';
     } else {
         // echo "Usuario y/o Contraseña incorrecta";
         $errorLogin = "Usuario y/o Contraseña es incorrecto";

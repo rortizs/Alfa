@@ -7,7 +7,7 @@ Class User extends DB {
     public function userExists($user, $pass) {
         $md5pass = md5($pass);
         $query = $this->connect()->prepare('SELECT * FROM `usuarios` WHERE username = :user AND password = :pass');
-        $query->execute(['user' => $user, 'pass' => $md5pass]);
+        $query->execute(['user' => $user, 'pass' => $pass]);
 
         if ($query->rowCount()) {
             return true;
@@ -16,7 +16,7 @@ Class User extends DB {
         }
     }
 
-    public function serUser($user) {
+    public function setUser($user) {
         $query = $this->connect()->prepare('SELECT * FROM usuarios WHERE username = :user');
         $query->execute(['user' => $user]);
 
