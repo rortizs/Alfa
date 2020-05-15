@@ -113,7 +113,7 @@
                                          </thead> 
                                          <tbody>
                                              <?php 
-                                               $query = "SELECT * FROM Productos";
+                                               $query = "SELECT * FROM productos";
                                                $result_productos = mysqli_query($conn, $query);
                                                
                                                while ($row = mysqli_fetch_array($result_productos)) { ?>
@@ -123,15 +123,14 @@
                                                          <td><?php echo $row['stock'] ?></td>
                                                          <td><?php echo $row['description'] ?></td>
                                                          <td><?php echo $row['imagen'] ?></td>
-                                                         <td>
-                                                              <a href="../modelos/edit_producto.php?id=<?php echo $row['id']?>" class="btn
-                                                               btn-success">
-                                                              Editar
-                                                              </a>
-                                                              <a href="../modelos/delete_producto.php?id=<?php echo $row['id']?>" class="btn
-                                                               btn-dark">
-                                                              Eliminar
-                                                              </a>
+                                                         <td><a href="../modelos/edit_producto.php?id=<?php echo $row['id']?>" class="btn
+                                                            btn-info">
+                                                           Actualizar 
+                                                           </a></td>
+                                                           <td><a href="../modelos/delete_producto.php?id=<?php echo $row['id']?>" class="btn
+                                                            btn-dark">
+                                                           Eliminar
+                                                           </a></td>
                                                          </td>
                                                      </tr>  
                         

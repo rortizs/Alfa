@@ -1,3 +1,5 @@
+<?php include ("db_user.php")
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -65,6 +67,33 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisos.html">Crear Permisos</a><a class="nav-link" href="tablapermiso.html">Tabla Permisos</a></nav>
                         </div> 
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
+                                >
+                                Permiso Usuario 
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
+                            ></a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisousuario.html">Permiso de Usuarios</a></nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
+                            aria-expanded="false" aria-controls="collapseLayouts">
+                            Categorías
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearcategoria.html">Crear
+                                    Categoría</a><a class="nav-link" href="tablacategoria.html">Tabla Categoría</a></nav>
+                        </div>
+
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
+                            >
+                                Productos
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
+                            ></a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproductos.html">Crear Producto</a><a class="nav-link" href="tablaproducto.html">Tabla Producto</a></nav>
+                            </div> 
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small"></div>
@@ -78,7 +107,7 @@
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALLES MH</h1>
 <?php
-     include ("db_user.php");
+     
 
      if(isset($_GET['id'])){
        $id= $_GET['id'];
@@ -121,7 +150,7 @@
         mysqli_query($conn, $query);
         $_SESSION['message'] = 'Usuario Actualizado';
         $_SESSION['message_type'] = 'success';
-        header('Location: ../vistas/crearusuario.html');
+        header('Location: ../vistas/tablausuario.html');
       }
 
 
@@ -133,7 +162,7 @@
   <div class="row">
     <div class="col-md-4 mx-auto">
       <div class="card card-body">
-      <form action="edit_user.php?id=<?php echo $_GET['id']; ?>" method="POST">
+      <form action="../modelos/edit_user.php?id=<?php echo $_GET['id']; ?>" method="POST">
         <div class="form-group">
           <input name="nombre" type="text" class="form-control" value="<?php echo $nombre; ?>" placeholder="Nombre">
            </div>

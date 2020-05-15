@@ -107,7 +107,7 @@
                         <h1 class="mt-4">DETALLES MH</h1>
                         <h1 class="mt-4">Tabla Proveedores</h1>
                       
-                        <?php include ("db_proveedor.php")
+                        <?php include ("db_user.php")
 ?>
           
 
@@ -125,7 +125,7 @@
                  </thead> 
                  <tbody>
                      <?php 
-                       $query = "SELECT * FROM usuarios";
+                       $query = "SELECT * FROM proveedores";
                        $result_usuarios = mysqli_query($conn, $query);
                        
                        while ($row = mysqli_fetch_array($result_usuarios)) { ?>
@@ -135,15 +135,14 @@
                                  <td><?php echo $row['direccion'] ?></td>
                                  <td><?php echo $row['telefono'] ?></td>
                                  <td><?php echo $row['email'] ?></td>
-                                 <td>
-                                      <a href="../modelos/edit_proveedor.php?id=<?php echo $row['id']?>" class="btn
-                                       btn-success">
-                                      Editar
-                                      </a>
-                                      <a href="../modelos/delete_proveedor.php?id=<?php echo $row['id']?>" class="btn
-                                       btn-dark">
-                                      Eliminar
-                                      </a>
+                                    <td><a href="../modelos/edit_proveedor.php?id=<?php echo $row['id']?>" class="btn
+                                        btn-info">
+                                       Actualizar 
+                                       </a></td>
+                                       <td><a href="../modelos/delete_proveedor.php?id=<?php echo $row['id']?>" class="btn
+                                        btn-dark">
+                                       Eliminar
+                                       </a></td>
                                  </td>
                              </tr>  
 

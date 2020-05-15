@@ -127,16 +127,14 @@
                                  <td><?php echo $row['nombre_categoria'] ?></td>
                                  <td><?php echo $row['descripcion'] ?></td>
                                  <td><?php echo $row['estado_categoria'] ?></td>
-                                
-                                 <td>
-                                 <a href="../modelos/edit_categoria.php?id=<?php echo $row['id']?>" class="btn
-                                       btn-success">
-                                      Editar Categoría
-                                      </a>
-                                      <a href="../modelos/delete_categoria.php?id=<?php echo $row['id']?>" class="btn
-                                       btn-dark">
-                                      Eliminar Categoría
-                                      </a>
+                                 <td><a href="../modelos/edit_categoria.php?id=<?php echo $row['id']?>" class="btn
+                                    btn-info">
+                                   Actualizar 
+                                   </a></td>
+                                   <td><a href="../modelos/delete_categoria.php?id=<?php echo $row['id']?>" class="btn
+                                    btn-dark">
+                                   Eliminar
+                                   </a></td>
                                  </td>
                              </tr>  
 

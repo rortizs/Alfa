@@ -132,22 +132,14 @@
                                                     <tr>
                                                      <td><?php echo $row['id'] ?></td>
                                                      <td><?php echo $row['nombre_permiso'] ?></td>
-                                                     </tr> 
-                                                
-                                                
-                                                <?php 
-                                                }
-                                                ?>
-                                                
-                                                         <td>
-                                                              <a href="../modelos/edit_permiso.php?id=<?php echo $row['id']?>" class="btn
-                                                               btn-success">
-                                                              Editar
-                                                              </a>
-                                                              <a href="../modelos/delete_permiso.php?id=<?php echo $row['id']?>" class="btn
-                                                               btn-dark">
-                                                              Eliminar
-                                                              </a>
+                                                <td><a href="../modelos/edit_permiso.php?id=<?php echo $row['id']?>" class="btn
+                                                    btn-info">
+                                                   Actualizar 
+                                                   </a></td>
+                                                   <td><a href="../modelos/delete_permiso.php?id=<?php echo $row['id']?>" class="btn
+                                                    btn-dark">
+                                                   Eliminar
+                                                   </a></td>
                                                          </td>
                                                      </tr>  
                         

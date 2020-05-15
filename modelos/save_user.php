@@ -4,7 +4,7 @@ include ("db_user.php");
 
 
 
-if (isset($_POST['save_user'])){ 
+if (isset($_POST['save_user'])){
      $nombre = $_POST['nombre'];
      $no_documento = $_POST['no_documento'];
      $direccion = $_POST['direccion'];
