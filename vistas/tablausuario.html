@@ -7,9 +7,11 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Detalles MH</title>
-        <link href="dist/css/styles.css" rel="stylesheet" />
-        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+        <link href="../public/css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+            crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous">
+        </script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -45,7 +47,7 @@
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
                             ></a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="dist/crearusuario.html">Crear Usuario</a><a class="nav-link" href="tablausuario.html">Tabla Usuarios</a></nav>
+                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearusuario.html">Crear Usuario</a><a class="nav-link" href="tablausuario.html">Tabla Usuarios</a></nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 >
@@ -83,36 +85,76 @@
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALLES MH</h1>
-                        <br></br>
-                        <div align="center"><img src="foto1.jpeg" style="width:621px;height:567px;"></div>
-                        <br></br>
-                        <img src="foto2.jpeg" align="left" style="width:576px;height:1024px;"></div>
-                        <div align="center"><img src="foto5.jpeg" style="width:576px;height:1024px;"></div>
-                        <br></br>
-                        <div align="center"><img src="foto3.jpeg" style="width:1024px;height:763px;"></div>
-                        <br></br>
-                        <div align="center"><img src="foto8.jpeg" style="width:700px;height:934px;"></div>
-                        <br></br>
-                        
-                      
-                        
-                        
-                        
+            <?php include ("db_user.php")
+?>
+            <div class="col-md-8">
+            <table class="table table-bordered">
+                 <thead>
+                      <tr>
+                      <br></br>
+                             <th>Nombre</th>
+                             <th>No. Documento </th>
+                             <th>Direccion</th>
+                             <th>Teléfono</th>
+                             <th>Email</th>
+                             <th>Cargo</th>
+                             <th>Username</th>
+                             <th>Contraseña</th>
+                             <th>Imagen</th>
+                             <th>Estado</th>
+                             <th>Contraseña 2</th>
+                             
+                      </tr>
+                 </thead> 
+                 <tbody>
+                     <?php 
+                       $query = "SELECT * FROM usuarios";
+                       $result = mysqli_query($conn, $query);
+                       
+                       while ($row = mysqli_fetch_array($result)) { ?>
+                             <tr>
+                                 <td><?php echo $row['nombre'] ?></td>
+                                 <td><?php echo $row['no_documento'] ?></td>
+                                 <td><?php echo $row['direccion'] ?></td>
+                                 <td><?php echo $row['telefono'] ?></td>
+                                 <td><?php echo $row['email'] ?></td>
+                                 <td><?php echo $row['cargo'] ?></td>
+                                 <td><?php echo $row['username'] ?></td>
+                                 <td><?php echo $row['password'] ?></td>
+                                 <td><?php echo $row['imagen'] ?></td>
+                                 <td><?php echo $row['estado'] ?></td>
+                                 <td><?php echo $row['password2'] ?></td>
+                                 <td>
+                                 <a href="edit_user.php?id=<?php echo $row['id']?>" class="btn
+                                       btn-success">
+                                      Actualizar Usuario
+                                      </a>
+                                      <a href="delete_user.php?id=<?php echo $row['id']?>" class="btn
+                                       btn-dark">
+                                      Eliminar Usuario
+                                      </a>
+                                 </td>
+                             </tr>  
+
+                       <?php } ?>
+                 </tbody>
+            </table>
+       </div>
+    </div>
+
+</div>
+
+                            
                         
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="dist/js/scripts.js"></script>
+        <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="dist/assets/demo/chart-area-demo.js"></script>
-        <script src="dist/assets/demo/chart-bar-demo.js"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-        <script src="dist/assets/demo/datatables-demo.js"></script>
+        <script src="assets/demo/datatables-demo.js"></script>
     </body>
 </html>
-<?php
-?>
-
-
-

@@ -18,11 +18,13 @@ if(isset($_SESSION['user'])) {
         $userSession->setCurrentUser($userForm);
         $user->setUser($userForm);
 
-        include_once 'vistas/home.php';
+        // include_once 'vistas/home.php';
+        header('location: vistas/menu.html');
     } else {
         // echo "Usuario y/o Contraseña incorrecta";
         $errorLogin = "Usuario y/o Contraseña es incorrecto";
-        include_once 'vistas/login.php';
+        // include_once 'vistas/login.php';
+        header('location: ../vistas/login.php');
     }
 } else {
     include_once 'vistas/login.php';
