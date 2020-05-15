@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -15,7 +15,7 @@
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="home.html">MENÚ</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
+            <a class="navbar-brand" href="menu.html">MENÚ</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
             ><!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
@@ -94,22 +94,78 @@
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALLES MH</h1>
+                       
+                        <?php include ("db_user.php")
+?>
+<div class="container-fluid">
+    <div class="row">
+       <div class="col-md-10">
+
+          <?php if (isset($_SESSION['message'])){ ?>
+                 <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show" role="alert">
+                 <?= $_SESSION['message'] ?>
+                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                 </button>
+                 </div>
+          <?php session_unset();} ?> 
+          <div class="card card-body">
+          <form action="save_categoria.php" method="POST">
+          <div class="col-md-8 order-md-1">
+<h4 class="mb-3">Ingresar datos para la creacion de la Categoría</h4>
+<form class="needs-validation" novalidate>
+<div class="row">
+<div class="col-md-6 mb-3">
+<label for="nombre_categoria">Nombre de la Categoría</label>
+<input type="text" name="nombre_categoria" class="form-control"
+                       placeholder="" autofocus>
+<div class="invalid-feedback">   
+Se requiere un nombre de Categoría válido.
+</div>
+</div>
+<div class="col-md-6 mb-3">
+<label for="descripcion">Descripción</label>
+<input type="text" name="descripcion" class="form-control"
+                       placeholder="" autofocus>
+<div class="invalid-feedback">   
+Se requiere una descripción válida.
+</div>
+</div>
+</div>
+               <label for="estado_categoria" class="control-label">Estado de la Categoría</label>
+                       <input type="text" name="estado_categoria" class="form-control"
+                       placeholder="Eje. En Stock" autofocus>
+                </div>     <div class="form-group">
+          </div>
+                
+            
 
 
 
+                
 
-                    </div>
-                    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-            crossorigin="anonymous"></script>
-        <script src="../public/js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous">
-        </script>
-        <script src="../public/assets/demo/chart-area-demo.js"></script>
-        <script src="../public/assets/demo/chart-bar-demo.js"></script>
+                 
+                     <input type="submit" class="btn btn-dark btn-block"
+                     name="save_categoria" value="Guardar">
+              </form>
+              
+            </div>
+
+       </div>
+                               
+                        
+                                                      
+                            
+                        
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous">
-        </script>
-        <script src="../public/assets/demo/datatables-demo.js"></script>
-                </body>
-            </html>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/datatables-demo.js"></script>
+    </body>
+</html>

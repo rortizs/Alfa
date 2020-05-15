@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -15,7 +15,7 @@
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="home.html">MENÚ</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
+            <a class="navbar-brand" href="menu.html">MENÚ</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
             ><!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
@@ -94,22 +94,64 @@
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALLES MH</h1>
+            <?php include ("db_user.php")
+?>
+            <div class="col-md-8">
+            <table class="table table-bordered">
+                 <thead>
+                      <tr>
+                      <br></br>
+                             <th>Nombre Categoría</th>
+                             <th>Descripción </th>
+                             <th>Estado Categoría</th>
+                             
+                             
+                      </tr>
+                 </thead> 
+                 <tbody>
+                     <?php 
+                       $query = "SELECT * FROM categorias";
+                       $result = mysqli_query($conn, $query);
+                       
+                       while ($row = mysqli_fetch_array($result)) { ?>
+                             <tr>
+                                 <td><?php echo $row['nombre_categoria'] ?></td>
+                                 <td><?php echo $row['descripcion'] ?></td>
+                                 <td><?php echo $row['estado_categoria'] ?></td>
+                                
+                                 <td>
+                                 <a href="edit_categoria.php?id=<?php echo $row['id']?>" class="btn
+                                       btn-success">
+                                      Editar Categoría
+                                      </a>
+                                      <a href="delete_categoria.php?id=<?php echo $row['id']?>" class="btn
+                                       btn-dark">
+                                      Eliminar Categoría
+                                      </a>
+                                 </td>
+                             </tr>  
+
+                       <?php } ?>
+                 </tbody>
+            </table>
+       </div>
+    </div>
+
+</div>
 
 
 
-
-                    </div>
-                    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-            crossorigin="anonymous"></script>
-        <script src="../public/js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous">
-        </script>
-        <script src="../public/assets/demo/chart-area-demo.js"></script>
-        <script src="../public/assets/demo/chart-bar-demo.js"></script>
+                            
+                        
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous">
-        </script>
-        <script src="../public/assets/demo/datatables-demo.js"></script>
-                </body>
-            </html>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/datatables-demo.js"></script>
+    </body>
+</html>
