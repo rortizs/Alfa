@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </form>
-            <!-- Navbar--> 
+            <!-- Navbar-->
             <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
@@ -64,13 +64,13 @@
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisos.php">Crear Permisos</a><a class="nav-link" href="tablapermiso.php">Tabla Permisos</a></nav>
                         </div> 
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
-                                >
-                                Permiso Usuario 
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                            ></a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisousuario.php">Permiso de Usuarios</a></nav>
-                            </div>
+                        >
+                            Productos
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
+                        ></a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproductos.php">Crear Producto</a><a class="nav-link" href="tablaproducto.php">Tabla Producto</a></nav>
+                        </div> 
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small"></div>
@@ -83,36 +83,92 @@
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALLES MH</h1>
-                        <br></br>
-                        <div align="center"><img src="foto1.jpeg" style="width:621px;height:567px;"></div>
-                        <br></br>
-                        <img src="foto2.jpeg" align="left" style="width:576px;height:1024px;"></div>
-                        <div align="center"><img src="foto5.jpeg" style="width:576px;height:1024px;"></div>
-                        <br></br>
-                        <div align="center"><img src="foto3.jpeg" style="width:1024px;height:763px;"></div>
-                        <br></br>
-                        <div align="center"><img src="foto8.jpeg" style="width:700px;height:934px;"></div>
-                        <br></br>
+                       
+                        <?php include ("db_user.php")
+                        ?>
+                                  
                         
-                      
+                                                <div class="col-md-8">
+                                    <table class="table table-bordered">
+                                         <thead>
+                                              <tr>
+                                              <br></br>
+                                                     <th>Nombre </th>
+                                                     <th>Codigo</th>
+                                                     <th>Stock</th>
+                                                     <th>Descripcion</th>
+                                                     <th>Imgen</th>
+                                              </tr>
+                                         </thead> 
+                                         <tbody>
+                                             <?php 
+                                               $query = "SELECT * FROM Productos";
+                                               $result_productos = mysqli_query($conn, $query);
+                                               
+                                               while ($row = mysqli_fetch_array($result_productos)) { ?>
+                                                     <tr>
+                                                         <td><?php echo $row['nombre'] ?></td>
+                                                         <td><?php echo $row['codigo'] ?></td>
+                                                         <td><?php echo $row['stock'] ?></td>
+                                                         <td><?php echo $row['description'] ?></td>
+                                                         <td><?php echo $row['imagen'] ?></td>
+                                                         <td>
+                                                              <a href="edit_producto.php?id=<?php echo $row['id']?>" class="btn
+                                                               btn-success">
+                                                              Editar
+                                                              </a>
+                                                              <a href="delete_producto.php?id=<?php echo $row['id']?>" class="btn
+                                                               btn-dark">
+                                                              Eliminar
+                                                              </a>
+                                                         </td>
+                                                     </tr>  
                         
-                        
-                        
-                        
-        </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-bar-demo.js"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/datatables-demo.js"></script>
-    </body>
-</html>
-<?php
-?>
+                                               <?php } ?> 
+                                                    
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+                    <script src="js/scripts.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+                    <script src="assets/demo/chart-area-demo.js"></script>
+                    <script src="assets/demo/chart-bar-demo.js"></script>
+                    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+                    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+                    <script src="assets/demo/datatables-demo.js"></script>
+                </body>
+            </html>

@@ -6,15 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Detalle MH</title>
+        <title>Detalles MH</title>
         <link href="css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
-      
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html"><font face="sb-sidenav-collapse-arrow">MENÚ</font></a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
+            <a class="navbar-brand" href="home.php">MENÚ</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
             ><!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
@@ -46,7 +45,7 @@
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
                             ></a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearusuario.html">Crear Usuario</a><a class="nav-link" href="tablausuario.html">Tabla Usuarios</a></nav>
+                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearusuario.php">Crear Usuario</a><a class="nav-link" href="tablausuario.php">Tabla Usuarios</a></nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 >
@@ -54,7 +53,7 @@
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
                             ></a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproveedor.html">Crear Proveedores</a><a class="nav-link" href="tablaproveedor.html">Tabla Proveedores</a></nav>
+                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproveedor.php">Crear Proveedores</a><a class="nav-link" href="tablaproveedor.php">Tabla Proveedores</a></nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                             >
@@ -62,7 +61,7 @@
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
                         ></a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisos.html">Crear Permisos</a><a class="nav-link" href="tablapermiso.html">Tabla Permisos</a></nav>
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisos.php">Crear Permisos</a><a class="nav-link" href="tablapermiso.php">Tabla Permisos</a></nav>
                         </div> 
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 >
@@ -70,7 +69,7 @@
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
                             ></a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisousuario.html">Permiso de Usuarios</a></nav>
+                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisousuario.php">Permiso de Usuarios</a></nav>
                             </div>
                     </div>
                     <div class="sb-sidenav-footer">
@@ -84,46 +83,49 @@
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALLES MH</h1>
-                        <br></br>
+                        <h1 class="mt-4">Tabla Proveedores</h1>
+                      
+                        <?php include ("db_proveedor.php")
+?>
+          
 
-                        <?php include ("db_user.php")
-    ?>
-                             <div class="container-fluid">
-                                  <div class="row">
-                                    <div class="col-md-10">
-                                                
-                                                 <?php if (isset($_SESSION['message'])){ ?>
-                                                  <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show" role="alert">
-                                                    <?= $_SESSION['message'] ?>
-                                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                                       <span aria-hidden="true">&times;</span>
-                                                                 </button>
-                                                                 </div>
-                                                          <?php session_unset();} ?> 
-                                                          <div class="card card-body">
-                                                          <form action="save_permiso.php" method="POST">
-                                                          <div class="col-md-8 order-md-1">
-                              <h4 class="mb-3">Ingresar datos para la 
-                                               creación del permiso</h4>
-                              <form class="needs-validation" novalidate>
-                                <div class="row">
-                                  <div class="col-md-6 mb-3">
-                                    <label for="nombre_permiso">Nombre Permiso</label>
-                                    <input type="text" name="nombre_permiso" class="form-control"
-                                                                       placeholder="" autofocus>
-                                    <div class="invalid-feedback">   
-                                   Se requiere un nombre de permiso válido.
-                                    </div>
-                                  </div>
-                                  
-                                  <input type="submit" class="btn btn-dark btn-block"
-                                  name="save_permiso" value="Guardar">
-                                                              </form>
-                                                              
-                                                            </div>
-                                                
-                                                       </div>
-                        
+                        <div class="col-md-8">
+            <table class="table table-bordered">
+                 <thead>
+                      <tr>
+                      <br></br>
+                             <th>Nombre</th>
+                             <th>No. Documento</th>
+                             <th>Direccion</th>
+                             <th>Teléfono</th>
+                             <th>Email</th>
+                      </tr>
+                 </thead> 
+                 <tbody>
+                     <?php 
+                       $query = "SELECT * FROM usuarios";
+                       $result_usuarios = mysqli_query($conn, $query);
+                       
+                       while ($row = mysqli_fetch_array($result_usuarios)) { ?>
+                             <tr>
+                                 <td><?php echo $row['nombre'] ?></td>
+                                 <td><?php echo $row['no_documento'] ?></td>
+                                 <td><?php echo $row['direccion'] ?></td>
+                                 <td><?php echo $row['telefono'] ?></td>
+                                 <td><?php echo $row['email'] ?></td>
+                                 <td>
+                                      <a href="edit_proveedor.php?id=<?php echo $row['id']?>" class="btn
+                                       btn-success">
+                                      Editar
+                                      </a>
+                                      <a href="delete_proveedor.php?id=<?php echo $row['id']?>" class="btn
+                                       btn-dark">
+                                      Eliminar
+                                      </a>
+                                 </td>
+                             </tr>  
+
+                       <?php } ?> 
                             
                         
         </div>

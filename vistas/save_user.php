@@ -29,7 +29,7 @@ if (isset($_POST['save_user'])){
       $_SESSION['message'] = 'Usuario Guardado';
       $_SESSION['message_type'] = 'info';
 
-      header ("Location: crearusuario.html");
+      header ("Location: crearusuario.php");
 }
 
 ?>

@@ -13,7 +13,7 @@
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">MENÚ</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
+            <a class="navbar-brand" href="home.php">MENÚ</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
             ><!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
@@ -45,7 +45,7 @@
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
                             ></a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearusuario.html">Crear Usuario</a><a class="nav-link" href="tablausuario.html">Tabla Usuarios</a></nav>
+                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearusuario.php">Crear Usuario</a><a class="nav-link" href="tablausuario.php">Tabla Usuarios</a></nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 >
@@ -53,7 +53,7 @@
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
                             ></a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproveedor.html">Crear Proveedores</a><a class="nav-link" href="tablaproveedor.html">Tabla Proveedores</a></nav>
+                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproveedor.php">Crear Proveedores</a><a class="nav-link" href="tablaproveedor.php">Tabla Proveedores</a></nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                             >
@@ -61,7 +61,7 @@
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
                         ></a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisos.html">Crear Permisos</a><a class="nav-link" href="tablapermiso.html">Tabla Permisos</a></nav>
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisos.ph">Crear Permisos</a><a class="nav-link" href="tablapermiso.php">Tabla Permisos</a></nav>
                         </div> 
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 >
@@ -69,7 +69,7 @@
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
                             ></a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisousuario.html">Permiso de Usuarios</a></nav>
+                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisousuario.php">Permiso de Usuarios</a></nav>
                             </div>
                     </div>
                     <div class="sb-sidenav-footer">
