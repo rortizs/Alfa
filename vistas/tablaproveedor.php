@@ -1,3 +1,5 @@
+<?php include ("db_user.php")
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -85,8 +87,7 @@
                         <h1 class="mt-4">DETALLES MH</h1>
                         <h1 class="mt-4">Tabla Proveedores</h1>
                       
-                        <?php include ("db_proveedor.php")
-?>
+ 
           
 
                         <div class="col-md-8">

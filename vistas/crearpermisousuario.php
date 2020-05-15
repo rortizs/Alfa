@@ -1,3 +1,5 @@
+<?php include ("db_user.php")
+?>
 <!DOCTYPE <!DOCTYPE html>
 <html lang="en">
     <head>

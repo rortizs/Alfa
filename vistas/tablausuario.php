@@ -1,3 +1,5 @@
+<?php include ("db_user.php")
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -83,8 +85,7 @@
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALLES MH</h1>
-            <?php include ("db_user.php")
-?>
+ 
             <div class="col-md-8">
             <table class="table table-bordered">
                  <thead>

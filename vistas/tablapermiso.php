@@ -1,3 +1,5 @@
+<?php include ("db_user.php")
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -80,8 +82,6 @@
                 </nav>
             </div>
                         
-                        <?php include ("db_user.php")
-        ?>
                                     <div id="layoutSidenav_content">
                                         <main>
                                             <div class="container-fluid">
