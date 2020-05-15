@@ -22,7 +22,7 @@
         mysqli_query($conn, $query);
         $_SESSION['message'] = 'Permiso Actualizado';
         $_SESSION['message_type'] = 'success';
-        header('Location: tablapermiso.html');
+        header('Location: ../vistas/tablapermiso.html');
       }
 
 

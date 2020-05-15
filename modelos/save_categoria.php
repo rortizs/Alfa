@@ -19,7 +19,7 @@ if (isset($_POST['save_categoria'])){
       $_SESSION['message'] = 'Categoría Guardada';
       $_SESSION['message_type'] = 'info';
 
-      header ("Location: crearcategoria.html");
+      header ("Location: ../vistas/crearcategoria.html");
 }
 
 ?>

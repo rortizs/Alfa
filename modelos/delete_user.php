@@ -11,6 +11,6 @@
        }
        $_SESSION ['message'] = 'Usuario Eliminado';
        $_SESSION ['message_type'] = 'dark'; 
-       header("Location: crearusuario.html");
+       header("Location: ../vistas/crearusuario.html");
     }
 ?>

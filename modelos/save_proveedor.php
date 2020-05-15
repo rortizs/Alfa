@@ -22,7 +22,7 @@ if (isset($_POST['save_proveedor'])){
       $_SESSION['message'] = 'Proveedor Guardado';
       $_SESSION['message_type'] = 'info';
 
-      header ("Location: crearproveedor.html");
+      header ("Location: ../vistas/crearproveedor.html");
 }
 
 ?>
