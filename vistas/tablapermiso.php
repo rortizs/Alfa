@@ -101,7 +101,7 @@
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproductos.html">Crear
                                     Producto</a><a class="nav-link" href="tablaproducto.php">Tabla Producto</a></nav>
                     </div>
-                    <div class="sb-sidenav-footer">
+                    <div style="position: absolute;bottom: 0;width: -webkit-fill-available;" class="sb-sidenav-footer">
                         DETALLES MH
                     </div>
                 </div>
