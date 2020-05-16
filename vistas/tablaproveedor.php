@@ -133,7 +133,7 @@
                        while ($row = mysqli_fetch_array($result)) { ?>
                                 <tr>
                                     <td><?php echo $row['nombre'] ?></td>
-                                    <td><?php echo $row['no_documento'] ?></td>
+                                    <td><?php echo $row['numero_documento'] ?></td>
                                     <td><?php echo $row['direccion'] ?></td>
                                     <td><?php echo $row['telefono'] ?></td>
                                     <td><?php echo $row['email'] ?></td>
