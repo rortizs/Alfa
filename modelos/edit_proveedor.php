@@ -31,7 +31,7 @@
         mysqli_query($conn, $query);
         $_SESSION['message'] = 'Proveedor Actualizado';
         $_SESSION['message_type'] = 'success';
-        header('Location: ../vistas/tablaproveedor.html');
+        header('Location: ../vistas/tablaproveedor.php');
       }
 
 

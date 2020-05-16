@@ -11,6 +11,6 @@
        }
        $_SESSION ['message'] = 'permiso Eliminado';
        $_SESSION ['message_type'] = 'dark'; 
-       header("Location: tablapermiso.html");
+       header("Location: tablapermiso.php");
     }
 ?>

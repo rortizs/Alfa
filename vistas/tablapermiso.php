@@ -1,4 +1,3 @@
-
 <?php include ("../modelos/db_user.php")
 ?>
 <html lang="es">
@@ -41,7 +40,7 @@
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Crear Usuarios</div>
@@ -62,7 +61,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproveedor.html">Crear
-                                    Proveedores</a><a class="nav-link" href="tablaproveedor.html">Tabla Proveedores</a>
+                                    Proveedores</a><a class="nav-link" href="tablaproveedor.php">Tabla Proveedores</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
@@ -90,7 +89,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearcategoria.html">Crear
-                                    Categoría</a><a class="nav-link" href="tablacategoria.html">Tabla Categoría</a>
+                                    Categoría</a><a class="nav-link" href="tablacategoria.php">Tabla Categoría</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
@@ -100,8 +99,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproductos.html">Crear
-                                    Producto</a><a class="nav-link" href="tablaproducto.html">Tabla Producto</a></nav>
-                        </div>
+                                    Producto</a><a class="nav-link" href="tablaproducto.php">Tabla Producto</a></nav>
                     </div>
                     <div class="sb-sidenav-footer">
                         DETALLES MH

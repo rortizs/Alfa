@@ -105,7 +105,7 @@
         mysqli_query($conn, $query);
         $_SESSION['message'] = 'Categoría Actualizada';
         $_SESSION['message_type'] = 'success';
-        header('Location: crearcategoria.html');
+        header('Location: ../vistas/tablacategoria.php');
       }
 
 

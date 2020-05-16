@@ -11,6 +11,6 @@
        }
        $_SESSION ['message'] = 'Proveedor Eliminado';
        $_SESSION ['message_type'] = 'dark'; 
-       header("Location: tablaproveedor.html");
+       header("Location: tablaproveedor.php");
     }
 ?>

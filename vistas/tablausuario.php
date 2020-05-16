@@ -61,7 +61,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproveedor.html">Crear
-                                    Proveedores</a><a class="nav-link" href="tablaproveedor.html">Tabla Proveedores</a>
+                                    Proveedores</a><a class="nav-link" href="tablaproveedor.php">Tabla Proveedores</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
@@ -71,7 +71,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisos.html">Crear
-                                    Permisos</a><a class="nav-link" href="tablapermiso.html">Tabla Permisos</a></nav>
+                                    Permisos</a><a class="nav-link" href="tablapermiso.php">Tabla Permisos</a></nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
                             aria-expanded="false" aria-controls="collapseLayouts">
@@ -89,7 +89,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearcategoria.html">Crear
-                                    Categoría</a><a class="nav-link" href="tablacategoria.html">Tabla Categoría</a>
+                                    Categoría</a><a class="nav-link" href="tablacategoria.php">Tabla Categoría</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
@@ -99,7 +99,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproductos.html">Crear
-                                    Producto</a><a class="nav-link" href="tablaproducto.html">Tabla Producto</a></nav>
+                                    Producto</a><a class="nav-link" href="tablaproducto.php">Tabla Producto</a></nav>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

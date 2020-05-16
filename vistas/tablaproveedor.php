@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include ("../modelos/db_user.php")
+?>
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
@@ -60,7 +61,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproveedor.html">Crear
-                                    Proveedores</a><a class="nav-link" href="tablaproveedor.html">Tabla Proveedores</a>
+                                    Proveedores</a><a class="nav-link" href="tablaproveedor.php">Tabla Proveedores</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
@@ -88,7 +89,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearcategoria.html">Crear
-                                    Categoría</a><a class="nav-link" href="tablacategoria.html">Tabla Categoría</a>
+                                    Categoría</a><a class="nav-link" href="tablacategoria.php">Tabla Categoría</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
@@ -98,77 +99,79 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproductos.html">Crear
-                                    Producto</a><a class="nav-link" href="tablaproducto.html">Tabla Producto</a></nav>
+                                    Producto</a><a class="nav-link" href="tablaproducto.php">Tabla Producto</a></nav>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
+                        <div class="small"></div>
                         DETALLES MH
                     </div>
-                </div>
             </nav>
         </div>
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <h1 class="mt-4">DETALLES MH</h1>
-                    <h1 class="mt-4">Tabla Proveedores</h1>
-
-                    <?php include ("db_user.php")
-?>
-
-
-                    <div class="col-md-8">
-                        <table class="table table-bordered">
-                            <thead>
+                    <h1 class="mt-4">Proveedores</h1>
+                    <hr>
+                    <div class="col-md-12">
+                        <table style="width: 100%;" class="table table-stripedd">
+                            <thead class="thead-dark">
                                 <tr>
-                                    <br></br>
                                     <th>Nombre</th>
-                                    <th>No. Documento</th>
+                                    <th>No. Documento </th>
                                     <th>Direccion</th>
                                     <th>Teléfono</th>
                                     <th>Email</th>
+                                    <th>Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
                        $query = "SELECT * FROM proveedores";
-                       $result_usuarios = mysqli_query($conn, $query);
+                       $result = mysqli_query($conn, $query);
                        
-                       while ($row = mysqli_fetch_array($result_usuarios)) { ?>
+                       while ($row = mysqli_fetch_array($result)) { ?>
                                 <tr>
                                     <td><?php echo $row['nombre'] ?></td>
                                     <td><?php echo $row['no_documento'] ?></td>
                                     <td><?php echo $row['direccion'] ?></td>
                                     <td><?php echo $row['telefono'] ?></td>
                                     <td><?php echo $row['email'] ?></td>
-                                    <td><a href="../modelos/edit_proveedor.php?id=<?php echo $row['id']?>" class="btn
-                                        btn-info">
-                                            Actualizar
-                                        </a></td>
-                                    <td><a href="../modelos/delete_proveedor.php?id=<?php echo $row['id']?>" class="btn
-                                        btn-dark">
-                                            Eliminar
-                                        </a></td>
+                                    <td>
+                                    <a href="../modelos/edit_proveedor.php?id=<?php echo $row['id']?>" class="btn btn-dark">
+                                        <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="../modelos/delete_proveedor.php?id=<?php echo $row['id']?>" class="btn btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                        </a>
                                     </td>
                                 </tr>
 
                                 <?php } ?>
-
-
+                            </tbody>
+                        </table>
                     </div>
-                    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-                        crossorigin="anonymous"></script>
-                    <script src="js/scripts.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
-                        crossorigin="anonymous"></script>
-                    <script src="assets/demo/chart-area-demo.js"></script>
-                    <script src="assets/demo/chart-bar-demo.js"></script>
-                    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"
-                        crossorigin="anonymous"></script>
-                    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"
-                        crossorigin="anonymous"></script>
-                    <script src="assets/demo/datatables-demo.js"></script>
+                </div>
+
+        </div>
+
+
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script>
+    <script src="../public/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous">
+    </script>
+    <script src="../public/assets/demo/chart-area-demo.js"></script>
+    <script src="../public/assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous">
+    </script>
+    <script src="../public/assets/demo/datatables-demo.js"></script>
 </body>
 
 </html>

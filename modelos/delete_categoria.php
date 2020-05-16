@@ -11,6 +11,6 @@
        }
        $_SESSION ['message'] = 'Categoría Eliminada';
        $_SESSION ['message_type'] = 'dark'; 
-       header("Location: crearcategoria.html");
+       header("Location: crearcategoria.php");
     }
 ?>

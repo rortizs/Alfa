@@ -150,7 +150,7 @@
         mysqli_query($conn, $query);
         $_SESSION['message'] = 'Usuario Actualizado';
         $_SESSION['message_type'] = 'success';
-        header('Location: ../vistas/tablausuario.html');
+        header('Location: ../vistas/tablausuario.php');
       }
 
 
