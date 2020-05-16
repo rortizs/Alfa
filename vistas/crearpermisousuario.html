@@ -60,7 +60,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproveedor.html">Crear
-                                    Proveedores</a><a class="nav-link" href="tablaproveedor.html">Tabla Proveedores</a>
+                                    Proveedores</a><a class="nav-link" href="tablaproveedor.php">Tabla Proveedores</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
@@ -88,7 +88,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearcategoria.html">Crear
-                                    Categoría</a><a class="nav-link" href="tablacategoria.html">Tabla Categoría</a>
+                                    Categoría</a><a class="nav-link" href="tablacategoria.php">Tabla Categoría</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
@@ -98,23 +98,68 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproductos.html">Crear
-                                    Producto</a><a class="nav-link" href="tablaproducto.html">Tabla Producto</a></nav>
+                                    Producto</a><a class="nav-link" href="tablaproducto.php">Tabla Producto</a></nav>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
                         DETALLES MH
                     </div>
-                </div>
-            </nav>
-        </div>
-        <div id="layoutSidenav_content">
-            <main>
-                <div class="container-fluid">
-                    <h1 class="mt-4">DETALLES MH</h1>
-                </div>
-            </main>
-        </div>
-    </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <h1 class="mt-4">DETALLES MH</h1>
+                        <br></br>
+    
+                        <?php include ("db_user.php")
+        ?>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-10">
+    
+                                    <?php if (isset($_SESSION['message'])){ ?>
+                                    <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show"
+                                        role="alert">
+                                        <?= $_SESSION['message'] ?>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <?php session_unset();} ?>
+                                    <div class="card card-body">
+                                        <form action="../modelos/save_permisousuario.php" method="POST">
+                                            <div class="col-md-8 order-md-1">
+                                                <h4 class="mb-3">Ingresar datos para la creación del permiso </h4>
+                                                <form class="needs-validation" novalidate>
+                                                    <div class="row">
+                                                        <div class="col-md-6 mb-3">
+                                                            <label for="id_usuario">Usuario</label>
+                                                            <input type="text" name="id_usuario" class="form-control"
+                                                                placeholder="" autofocus>
+                                                            <div class="invalid-feedback">
+                                                                Se requiere un nombre de un Usuario válido.
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6 mb-3">
+                                                            <label for="id_permiso">Permiso</label>
+                                                            <input type="text" name="id_permiso" class="form-control"
+                                                                placeholder="" autofocus>
+                                                            <div class="invalid-feedback">
+                                                                Se requiere de un permiso valido.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                        <input type="submit" class="btn btn-dark btn-block"
+                                                            name="save_permisousario" value="Guardar">
+                                                </form>
+    
+                                            </div>
+    
+                                    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
