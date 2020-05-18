@@ -1,4 +1,5 @@
-<!DOCTYPE <!DOCTYPE html>
+<?php include ("../modelos/db_user.php")
+?>
 <html lang="en">
 
 <head>
@@ -79,7 +80,8 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link"
-                                    href="crearpermisousuario.html">Permiso de Usuarios</a></nav>
+                                    href="crearpermisousuario.php">Crear
+                                    Permisos Usuario</a><a class="nav-link" href="tablapermisousuario.php">Tabla Permiso Usuario</a></nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
                             aria-expanded="false" aria-controls="collapseLayouts">
@@ -111,10 +113,9 @@
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALLES MH</h1>
+
                         <br></br>
-    
-                        <?php include ("db_user.php")
-        ?>
+
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-10">
@@ -133,26 +134,49 @@
                                             <div class="col-md-8 order-md-1">
                                                 <h4 class="mb-3">Ingresar datos para la creación del permiso </h4>
                                                 <form class="needs-validation" novalidate>
-                                                    <div class="row">
-                                                        <div class="col-md-6 mb-3">
-                                                            <label for="id_usuario">Usuario</label>
-                                                            <input type="text" name="id_usuario" class="form-control"
-                                                                placeholder="" autofocus>
-                                                            <div class="invalid-feedback">
-                                                                Se requiere un nombre de un Usuario válido.
-                                                            </div>
-                                                        </div>
+                                                    
+                                       
+                                                                 <div class="input-group mb-3">
+                                                               <div class="input-group-prepend">
+                                                           <label class="input-group-text" for="id_usuario">Usuario</label>
+                                                                </div>
+                                                                <select class="custom-select" name="id_usuario" id="id_usuario">
+                                                           
+                                                            <?php
 
-                                                        <div class="col-md-6 mb-3">
-                                                            <label for="id_permiso">Permiso</label>
-                                                            <input type="text" name="id_permiso" class="form-control"
-                                                                placeholder="" autofocus>
-                                                            <div class="invalid-feedback">
-                                                                Se requiere de un permiso valido.
-                                                            </div>
+                                                            $query_usuario = mysqli_query($conn, "SELECT id, nombre FROM usuarios");
+                                                            $result_usuario = mysqli_num_rows( $query_usuario);
+                                                            mysqli_close($conn);
+                                                            ?> 
+
+                                                    
+                                                        <option selected>Seleccione el usuario...</option>
+                                                        <?php
+
+                                                         if($result_usuario > 0){
+                                                             while($usuario = mysqli_fetch_array($query_usuario)){
+
+                                                          ?>
+                                                         
+                                                          <option value="<?php echo $usuario['id']; ?>"><?php echo $usuario['nombre']; ?> </option>
+                                                          <?php
+                                                             }
+                                                         }
+                                                         ?>
+                                                        </select>
+                                                        
+                                                         </div>
+                                                      
+                                                         <div class="input-group mb-3">
+                                                               <div class="input-group-prepend">
+                                                           <label class="input-group-text" for="id_permiso">Permiso</label>
+                                                                </div>
+                                                                <select class="custom-select" name="id_permiso" id="id_permiso">
+                                                                <option selected>Seleccione el permiso...</option>
+                                                                </select>
+                                                       
                                                         </div>
-                                                    </div>
-    
+                                
                                                         <input type="submit" class="btn btn-dark btn-block"
                                                             name="save_permisousario" value="Guardar">
                                                 </form>

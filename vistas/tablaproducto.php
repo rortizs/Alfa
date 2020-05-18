@@ -80,7 +80,8 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link"
-                                    href="crearpermisousuario.html">Permiso de Usuarios</a></nav>
+                                    href="crearpermisousuario.php">Crear
+                                    Permiso Usuario</a><a class="nav-link" href="tablapermisousuario.php">Tabla permiso Usuario</a>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
                             aria-expanded="false" aria-controls="collapseLayouts">

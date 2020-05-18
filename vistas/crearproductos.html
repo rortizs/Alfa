@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include ("../modelos/db_user.php")
+?>
+
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
@@ -79,7 +81,8 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link"
-                                    href="crearpermisousuario.html">Permiso de Usuarios</a></nav>
+                                    href="crearpermisousuario.php">Crear
+                                    Permisos Usuario</a><a class="nav-link" href="tablapermisousuario.php">Tabla Permiso Usuario</a></nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
                             aria-expanded="false" aria-controls="collapseLayouts">
@@ -112,8 +115,6 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">DETALLES MH</h1>
 
-                    <?php include ("db_user.php")
-    ?>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-10">
@@ -131,7 +132,8 @@
                                     <form action="../modelos/save_producto.php" method="POST">
                                         <div class="col-md-8 order-md-1">
                                             <h4 class="mb-3">Ingresar datos para la creacion de Productos</h4>
-                                            <form class="needs-validation" novalidate>
+                                            <form class="needs-validation" novalidate></form>
+                                                <form action="" method="POST" enctype="multipart/form-data">
                                                 <div class="row">
                                                     <div class="col-md-6 mb-3">
                                                         <label for="nombre">Nombre del Producto</label>
@@ -142,8 +144,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6 mb-3">
-                                                        <label for="numero_documento">Codigo</label>
-                                                        <input type="text" name="numero_documento" class="form-control"
+                                                        <label for="codigo">Codigo</label>
+                                                        <input type="number" name="codigo" class="form-control"
                                                             placeholder="" autofocus>
                                                         <div class="invalid-feedback">
                                                             Se requiere un codigo válido.
@@ -151,22 +153,25 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="direccion" class="control-label">Stock</label>
-                                                    <input type="text" name="direccion" class="form-control"
+                                                    <label for="stock" class="control-label">Stock</label>
+                                                    <input type="text" name="stock" class="form-control"
                                                         placeholder="" autofocus>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="telefono" class="control-label">Descripcion</label>
-                                                    <input type="text" name="telefono" class="form-control"
+                                                    <label for="descripcion" class="control-label">Descripcion</label>
+                                                    <input type="text" name="descripcion" class="form-control"
                                                         placeholder="" autofocus>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="email" class="control-label">Imagen</label>
-                                                    <input type="text" name="email" class="form-control" placeholder=""
-                                                        autofocus>
-                                                </div>
-
+                                                <div class="photo">
+                                                    <label for="imagen">Imagen</label>
+                                                        <label for="imagen"></label>
+                                                        </div>
+                                                        <div class="upimg">
+                                                        <input type="file" name="imagen" id="imagen">
+                                                        </div>
+                                                        <div id="form_alert"></div>
+                                                </div> <br/>
 
 
 
@@ -174,6 +179,7 @@
                                                 <input type="submit" class="btn btn-dark btn-block" name="save_producto"
                                                     value="Guardar">
                                             </form>
+                                        </form>
 
                                         </div>
 
