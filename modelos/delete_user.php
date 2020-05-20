@@ -118,11 +118,13 @@
 
        }
        $_SESSION ['message'] = 'Usuario Eliminado';
-       $_SESSION ['message_type'] = 'dark'; 
-       header("Location: ../vistas/tablausuario.html");
+       $_SESSION ['message_type'] = 'dark';  
     }
 ?>
 
+<form action="../vistas/tablausuario.php" method="post">
+<input type="submit" class="btn btn-dark"name="volver" value="Volver">
+</form>
                         
 </div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>

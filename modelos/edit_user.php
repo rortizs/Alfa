@@ -1,4 +1,4 @@
-<?php include ("db_user.php")
+<?php include ("../modelos/db_user.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -106,97 +106,151 @@
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALLES MH</h1>
+
+
+
+
+
+
+
+
 <?php
-     
-
-     if(isset($_GET['id'])){
-       $id= $_GET['id'];
-       $query = "SELECT * FROM usarios WHERE id=$id";
-       $result=mysqli_query($conn, $query);
-       if(mysqli_num_rows($result)==1){
-           $row = mysqli_fetch_array($result);
-           $nombre = $row['nombre'];
-           $no_documento = $row['no_documento'];
-           $direccion = $row['direccion'];
-           $telefono = $row['telefono'];
-           $email = $row['email'];
-           $cargo = $row['cargo'];
-           $username = $row['username'];
-           $password = $row['password'];
-           $imagen = $row['imagen'];
-           $estado = $row['estado'];
-           $password2 = $row['password2'];
-       }
-     }
-
-
-     if (isset($_POST['update'])) {
-        $id = $_GET['id'];
-        $nombre = $_POST['nombre'];
-        $no_documento = $_POST['no_documento'];
-        $direccion = $_POST['direccion'];
-        $telefono = $_POST['telefono'];
-        $email = $_POST['email'];
-        $cargo = $_POST['cargo'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $imagen = $_POST['imagen'];
-        $estado = $_POST['estado'];
-        $password2 = $_POST['password2'];
-      
-        $query = "UPDATE usuarios set nombre = '$nombre', no_documento = '$no_documento', direccion = '$direccion', telefono = '$telefono',
-        email = '$email', cargo = '$cargo', username = '$username', password = '$password', imagen = '$imagen', estado = '$estado',  
-        password2 = '$password' WHERE id=$id";
-        mysqli_query($conn, $query);
-        $_SESSION['message'] = 'Usuario Actualizado';
-        $_SESSION['message_type'] = 'success';
-        header('Location: ../vistas/tablausuario.php');
-      }
-
-
-
+   if(isset($_GET['id'])){
+    $id= $_GET['id'];
+    $query = "SELECT * FROM usuarios WHERE id=$id";
+    $result=mysqli_query($conn, $query);
+    if(mysqli_num_rows($result)==1){
+        $row = mysqli_fetch_array($result);
+        $nombre= $row['nombre'];
+        $no_documento= $row['no_documento'];
+        $direccion= $row['direccion'];
+        $telefono= $row['telefono'];
+        $email= $row['email'];
+        $cargo= $row['cargo'];
+        $username= $row['username'];
+        $password= $row['password'];
+        $imagen= $row['imagen'];
+        $estado= $row['estado'];
+        $password2= $row['password2'];
+    }
+}
+if (isset($_POST['update'])) {
+    $id = $_GET['id'];
+    $nombre= $_GET['nombre'];
+        $no_documento= $_GET['no_documento'];
+        $direccion= $_GET['direccion'];
+        $telefono= $_GET['telefono'];
+        $email= $_GET['email'];
+        $cargo= $_GET['cargo'];
+        $username= $_GET['username'];
+        $password= $_GET['password'];
+        $imagen= $_GET['imagen'];
+        $estado= $_GET['estado'];
+        $password2= $_GET['password2'];
+    $query = "UPDATE usuarios set nombre='$nombre', no_documento='$no_documento', direccion='$direccion', telefono='$telefono', email='$email', 
+    cargo='$cargo', username='$username', password='$password', imagen='$imagen', estado='$estado', password2='$password2'
+    WHERE id=$id";
+    mysqli_query($conn, $query);
+    $_SESSION['message'] = 'Usuario Actualizado';
+    $_SESSION['message_type'] = 'success';
+    header('Location: ../vistas/tablausuario.php');
+  }
 ?>
+                        <h4 class="mb-3">Ingresar datos a modificar </h4>
+                                            <form class="needs-validation" novalidate>
+                                                <div class="row">
+
+                                                <form action="edit_user.php?id=<?php echo $_GET['id']; ?>" method="POST">
+                                                    <div class="col-md-6 mb-3">
+                                                        <i class="fas fa-user-edit"></i>
+                                                        <label for="nombre">Nombre Completo</label>
+                                                        
+                                                        <input type="text" name="nombre" class="form-control"
+                                                            placeholder="" autofocus value="<?php echo $nombre; ?>">
+                                                          
+                                                        <div class="invalid-feedback">
+                                                            Se requiere un nombre válido.
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <i class="fas fa-passport"></i>
+                                                        <label for="no_documento">No. Documento</label>
+                                                        <input type="text" name="no_documento" class="form-control"
+                                                            placeholder="" autofocus  value="<?php echo $no_documento; ?>">
+                                                        <div class="invalid-feedback">
+                                                            Se requiere un número de documento válido.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <i class="far fa-address-card"></i>
+                                                    <label for="direccion" class="control-label">Dirección</label>
+                                                    <input type="text" name="direccion" class="form-control"
+                                                        placeholder="Eje. Ciudad" autofocus value="<?php echo $direccion; ?>">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <i class="fas fa-phone-square-alt"></i>
+                                                    <label for="telefono" class="control-label">Teléfono</label>
+                                                    <input type="text" name="telefono" class="form-control"
+                                                        placeholder="" autofocus value="<?php echo $telefono; ?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <i class="fas fa-envelope"></i>
+                                                    <label for="email" class="control-label">E-mail</label>
+                                                    <input type="text" name="email" class="form-control"
+                                                        placeholder="ejemplo@gmail.com" autofocus value="<?php echo $email; ?>">
+                                                </div>
 
 
-<div class="container p-4">
-  <div class="row">
-    <div class="col-md-4 mx-auto">
-      <div class="card card-body">
-      <form action="../modelos/edit_user.php?id=<?php echo $_GET['id']; ?>" method="POST">
-        <div class="form-group">
-          <input name="nombre" type="text" class="form-control" value="<?php echo $nombre; ?>" placeholder="Nombre">
-           </div>
-           <div class="form-group">
-          <input name="no_documento" type="text" class="form-control" value="<?php echo $no_documento; ?>" placeholder="No. Documento">
-           </div>
-           <div class="form-group">
-          <input name="direccion" type="text" class="form-control" value="<?php echo $direccion; ?>" placeholder="Direccion">
-           </div>
-           <div class="form-group">
-          <input name="telefono" type="text" class="form-control" value="<?php echo $telefono; ?>" placeholder="Teléfono">
-           </div>
-           <div class="form-group">
-          <input name="email" type="text" class="form-control" value="<?php echo $email; ?>" placeholder="Email">
-           </div>
-           <div class="form-group">
-          <input name="cargo" type="text" class="form-control" value="<?php echo $cargo; ?>" placeholder="Cargo">
-           </div>
-           <div class="form-group">
-          <input name="password" type="password" class="form-control" value="<?php echo $password; ?>" placeholder="Contraseña">
-           </div>
-           <div class="form-group">
-          <input name="imagen" type="text" class="form-control" value="<?php echo $imagen; ?>" placeholder="Imagen">
-           </div>
-           <div class="form-group">
-          <input name="estado" type="text" class="form-control" value="<?php echo $estado; ?>" placeholder="Estado">
-           </div>
-           <div class="form-group">
-          <input name="password2" type="password" class="form-control" value="<?php echo $password2; ?>" placeholder="Contraseña 2">
-           </div>
-            
-              <button class="btn btn-info" name="update">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <i class="fas fa-male"></i>
+                                                        <label for="cargo">Cargo</label>
+                                                        <input type="text" name="cargo" class="form-control"
+                                                            placeholder="" autofocus value="<?php echo $cargo; ?>">
+                                                        <div class="invalid-feedback">
+                                                            Se requiere un cargo válido.
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <i class="fas fa-at"></i>
+                                                        <label for="username">Username</label>
+                                                        <input type="text" name="username" class="form-control"
+                                                            placeholder="@usuario" autofocus  value="<?php echo $username; ?>">
+                                                        <div class="invalid-feedback">
+                                                            Se requiere un usuario válido.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <i class="fas fa-lock"></i>
+                                                <label for="password" class="control-label">Contraseña</label>
+                                                <div class="form-group">
+                                                    <input type="password" name="password" class="form-control"
+                                                        placeholder="" autofocus value="<?php echo $password; ?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <i class="far fa-image"></i>
+                                                    <label for="imagen" class="control-label">Imagen</label>
+                                                    <input type="text" name="imagen" class="form-control" placeholder=""
+                                                        autofocus value="<?php echo $imagen; ?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <i class="fas fa-battery-three-quarters"></i>
+                                                    <label for="estado" class="control-label">Estado</label>
+                                                    <input type="text" name="estado" class="form-control" placeholder=""
+                                                        autofocus value="<?php echo $estado; ?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <i class="fas fa-lock"></i>
+                                                    <label for="password2" class="control-label">Contraseña</label>
+                                                    <input type="password" name="password2" class="form-control"
+                                                        placeholder="" autofocus value="<?php echo $password2; ?>">
+                                                </div>
+                                                <button class="btn btn-dark" name="update">
                Actualizar
               </button>
+
       </form>
       </div>
     </div>

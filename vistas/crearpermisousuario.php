@@ -166,16 +166,38 @@
                                                         </select>
                                                         
                                                          </div>
-                                                      
+
                                                          <div class="input-group mb-3">
                                                                <div class="input-group-prepend">
-                                                           <label class="input-group-text" for="id_permiso"><i class="fas fa-clipboard-check"></i>Permiso</label>
+                                                           <label class="input-group-text" for="id_permiso"> <i class="fas fa-male"></i>Permiso</label>
                                                                 </div>
                                                                 <select class="custom-select" name="id_permiso" id="id_permiso">
-                                                                <option selected>Seleccione el permiso...</option>
-                                                                </select>
-                                                       
-                                                        </div>
+                                                           
+                                                            <?php
+
+                                                            $query_permiso = mysqli_query($conn, "SELECT id, nombre_permisos FROM permisos");
+                                                            $result_permiso = mysqli_num_rows( $query_permiso);
+                                                            mysqli_close($conn);
+                                                            ?> 
+
+                                                    
+                                                        <option selected>Seleccione permiso...</option>
+                                                        <?php
+
+                                                         if($result_permiso > 0){
+                                                             while($permiso = mysqli_fetch_array($query_permiso)){
+
+                                                          ?>
+                                                         
+                                                          <option value="<?php echo $permiso['id']; ?>"><?php echo $permiso['nombre_permiso']; ?> </option>
+                                                          <?php
+                                                             }
+                                                         }
+                                                         ?>
+                                                        </select>
+                                                        
+                                                         </div>
+
                                 
                                                         <input type="submit" class="btn btn-dark btn-block"
                                                             name="save_permisousario" value="Guardar">

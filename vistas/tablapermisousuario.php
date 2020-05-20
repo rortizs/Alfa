@@ -13,6 +13,7 @@
     <link href="../public/css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
         crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous">
     </script>
 </head>
@@ -32,7 +33,7 @@
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="login.html">Logout</a>
+                    <a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
                 </div>
             </li>
         </ul>
@@ -104,41 +105,38 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
+                        <div class="small"></div>
                         DETALLES MH
                     </div>
-                </div>
             </nav>
         </div>
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <h1 class="mt-4">Proveedores</h1>
+                    <h1 class="mt-4"><i class="fas fa-users-cog"></i>Permiso Usuario</h1>
                     <hr>
                     <div class="col-md-12">
                         <table style="width: 100%;" class="table table-stripedd">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Usuario</th>
-                                    <th>Permiso</th>
-                                    <th>Opciones</th>
+                                    <th>Id_Usuario</th>
+                                    <th>Id_Permiso</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                       $query = "SELECT * FROM permiso_usuario";
+                       $query = "SELECT * FROM permisos_usuario";
                        $result = mysqli_query($conn, $query);
                        
                        while ($row = mysqli_fetch_array($result)) { ?>
                                 <tr>
-                                    <td><?php echo $row['id'] ?></td>
                                     <td><?php echo $row['id_usuario'] ?></td>
                                     <td><?php echo $row['id_permiso'] ?></td>
                                     <td>
-                                    <a href="../modelos/edit_permisousuario.php?id=<?php echo $row['id']?>" class="btn btn-dark">
+                                        <a href="../modelos/edit_user.php?id=<?php echo $row['id']?>" class="btn btn-dark">
                                         <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="../modelos/delete_permisousuario.php?id=<?php echo $row['id']?>" class="btn btn-danger">
+                                        <a href="../modelos/delete_user.php?id=<?php echo $row['id']?>" class="btn btn-danger">
                                         <i class="fas fa-trash"></i>
                                         </a>
                                     </td>
@@ -154,26 +152,20 @@
 
 
 
-
-
-
-
-                    </div>
-                    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-                        crossorigin="anonymous"></script>
-                    <script src="../public/js/scripts.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
-                        crossorigin="anonymous">
-                    </script>
-                    <script src="../public/assets/demo/chart-area-demo.js"></script>
-                    <script src="../public/assets/demo/chart-bar-demo.js"></script>
-                    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"
-                        crossorigin="anonymous"></script>
-                    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"
-                        crossorigin="anonymous">
-                    </script>
-                    <script src="../public/assets/demo/datatables-demo.js"></script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script>
+    <script src="../public/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous">
+    </script>
+    <script src="../public/assets/demo/chart-area-demo.js"></script>
+    <script src="../public/assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous">
+    </script>
+    <script src="../public/assets/demo/datatables-demo.js"></script>
 </body>
 
 </html>
