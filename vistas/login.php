@@ -6,7 +6,8 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous">
+    </script>
 
 </head>
 <!-- <body>
@@ -38,6 +39,7 @@
   </div>
 </body> -->
 <body class="bg-dark">
+  
   <br><br><br>
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
@@ -46,16 +48,16 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Iniciar Sesión</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4"><i class="fas fa-sign-in-alt"></i>Iniciar Sesión</h3></div>
                                     <div class="card-body">
                                     <form action="" method="POST">
                                             <div class="form-group">
-                                                <label class="control-label">Usuario</label>
+                                                <label class="control-label"><i class="fas fa-user-shield"></i>Usuario</label>
                                                        <input type="text" name="username" class="form-control"
                                                        placeholder="Ingrese su usuario." autofocus>
                                                 </div> 
                                             <div class="form-group">
-                                              <label class="control-label">Contraseña</label>
+                                              <label class="control-label"><i class="fas fa-lock"></i>Contraseña</label>
                                               <input class="form-control" name="password"  type="password" placeholder="Ingrese su Contraseña" />
                                             </div>
 
@@ -72,7 +74,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><span><strong>Detalles H&M</strong></span></div>
+                                        <div class="small"><span><strong><i class="fas fa-gifts"></i>Detalles H&M</strong></span></div>
                                     </div>
                                 </div>
                             </div>
