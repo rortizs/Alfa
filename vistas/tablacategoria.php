@@ -13,6 +13,7 @@
     <link href="../public/css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
         crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous">
     </script>
 </head>
@@ -32,8 +33,6 @@
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-
-
                     <a class="dropdown-item" href="login.html">Logout</a>
                 </div>
             </li>
@@ -44,64 +43,65 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Crear Usuarios</div>
+                        <div class="sb-sidenav-menu-heading"></div>
 
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
                             aria-expanded="false" aria-controls="collapseLayouts">
-                            Usuarios
+                            <i class="fas fa-users"></i>
+                            Usuarios                            
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearusuario.html">Crear
-                                    Usuario</a><a class="nav-link" href="tablausuario.php">Tabla Usuarios</a></nav>
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearusuario.html"><i class="fas fa-user-plus"></i>Crear
+                                    Usuario</a><a class="nav-link" href="tablausuario.php"><i class="fas fa-table"></i>Tabla Usuarios</a></nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
                             aria-expanded="false" aria-controls="collapseLayouts">
-                            Proveedores
+                            <i class="fas fa-briefcase"></i>Proveedores
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproveedor.html">Crear
-                                    Proveedores</a><a class="nav-link" href="tablaproveedor.php">Tabla Proveedores</a>
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproveedor.html"><i class="fas fa-wallet"></i>Crear
+                                    Proveedores</a><a class="nav-link" href="tablaproveedor.php"><i class="fas fa-table"></i>Tabla Proveedores</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
                             aria-expanded="false" aria-controls="collapseLayouts">
-                            Permisos
+                            <i class="fas fa-chess-board"></i> Permisos
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisos.html">Crear
-                                    Permisos</a><a class="nav-link" href="tablapermiso.php">Tabla Permisos</a></nav>
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearpermisos.html"><i class="fas fa-plus-square"></i>Crear
+                                    Permisos</a><a class="nav-link" href="tablapermiso.php"><i class="fas fa-table"></i>Tabla Permisos</a></nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
                             aria-expanded="false" aria-controls="collapseLayouts">
-                            Permiso Usuario
+                            <i class="fas fa-user-shield"></i>   Permiso Usuario
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav"><a class="nav-link"
-                                    href="crearpermisousuario.php">Crear
-                                    Permiso Usuario</a><a class="nav-link" href="tablapermisousuario.php">Tabla permiso Usuario</a>
+                                    href="crearpermisousuario.php"><i class="fas fa-user-plus"></i>Crear
+                                    Permiso Usuario</a><a class="nav-link" href="tablapermisousuario.php"><i class="fas fa-table"></i>Tabla Permiso Usuario</a></nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
                             aria-expanded="false" aria-controls="collapseLayouts">
-                            Categorías
+                            <i class="fas fa-tags"></i>Categorías
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearcategoria.html">Crear
-                                    Categoría</a><a class="nav-link" href="tablacategoria.php">Tabla Categoría</a>
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearcategoria.html"><i class="fas fa-tag"></i>Crear
+                                    Categoría</a><a class="nav-link" href="tablacategoria.php"><i class="fas fa-table"></i>Tabla Categoría</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
                             aria-expanded="false" aria-controls="collapseLayouts">
-                            Producto
+                            <i class="fas fa-gifts"></i>Producto
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproductos.html">Crear
-                                    Producto</a><a class="nav-link" href="tablaproducto.php">Tabla Producto</a></nav>
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproductos.html"><i class="fas fa-gift"></i>Crear
+                                    Producto</a><a class="nav-link" href="tablaproducto.php"><i class="fas fa-table"></i>Tabla Producto</a></nav>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
