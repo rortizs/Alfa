@@ -113,7 +113,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <h1 class="mt-4">Usuarios</h1>
+                    <h1 class="mt-4"><i class="fas fa-users-cog"></i>Usuarios</h1>
                     <hr>
                     <div class="col-md-12">
                         <table style="width: 100%;" class="table table-stripedd">

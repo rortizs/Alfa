@@ -132,7 +132,7 @@
                                     <div class="card card-body">
                                         <form action="../modelos/save_permisousuario.php" method="POST">
                                             <div class="col-md-8 order-md-1">
-                                                <h4 class="mb-3">Ingresar datos para la creación del permiso </h4>
+                                                <h4 class="mb-3"><i class="fas fa-male"></i>Ingresar datos para la creación del permiso </h4>
                                                 <form class="needs-validation" novalidate>
                                                     
                                        

@@ -113,7 +113,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <h1 class="mt-4">Proveedores</h1>
+                    <h1 class="mt-4"><i class="fas fa-luggage-cart"></i>Proveedores</h1>
                     <hr>
                     <div class="col-md-12">
                         <table style="width: 100%;" class="table table-stripedd">

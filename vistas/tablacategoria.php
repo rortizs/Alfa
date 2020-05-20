@@ -113,7 +113,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <h1 class="mt-4">Categoria</h1>
+                    <h1 class="mt-4"><i class="fas fa-box-open"></i>Categoria</h1>
                     <hr>
                     <div class="col-md-12">
                         <table style="width: 100%;" class="table table-stripedd">
