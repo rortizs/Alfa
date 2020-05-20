@@ -145,6 +145,7 @@
                                                             <?php
 
                                                             $query_usuario = mysqli_query($conn, "SELECT id, nombre FROM usuarios");
+                                                            $query_permiso = mysqli_query($conn, "SELECT id, nombre_permiso FROM permisos");
                                                             $result_usuario = mysqli_num_rows( $query_usuario);
                                                             mysqli_close($conn);
                                                             ?> 
@@ -173,7 +174,26 @@
                                                                 </div>
                                                                 <select class="custom-select" name="id_permiso" id="id_permiso">
                                                                 <option selected>Seleccione el permiso...</option>
-                                                                </select>
+                                                              
+
+                                                                
+
+                                                        <?php
+
+                                                         if($result_usuario > 0){
+                                                             while($permiso = mysqli_fetch_array($query_permiso)){
+
+                                                          ?>
+                                                         
+                                                          <option value="<?php echo $permiso['id']; ?>"><?php echo $permiso['nombre_permiso']; ?> </option>
+                                                          <?php
+                                                             }
+                                                         }
+                                                         ?>
+                                                        </select>
+                                                        
+                                                         </div>
+                                                               
                                                        
                                                         </div>
                                 

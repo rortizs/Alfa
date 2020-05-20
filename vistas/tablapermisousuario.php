@@ -126,7 +126,7 @@
                             </thead>
                             <tbody>
                                 <?php 
-                       $query = "SELECT * FROM permiso_usuario";
+                       $query = "SELECT * FROM permisos_usuario";
                        $result = mysqli_query($conn, $query);
                        
                        while ($row = mysqli_fetch_array($result)) { ?>

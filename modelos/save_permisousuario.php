@@ -19,7 +19,7 @@ if (isset($_POST['save_permisousuario'])){
          $_SESSION['message'] = 'Permiso Usuario Guardado';
          $_SESSION['message_type'] = 'info';
    
-         header ("Location: ../vistas/crearpermisousuario.html");
+         header ("Location: ../vistas/crearpermisousuario.php");
    }
    
    ?>
