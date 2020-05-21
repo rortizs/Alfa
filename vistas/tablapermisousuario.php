@@ -119,8 +119,10 @@
                         <table style="width: 100%;" class="table table-stripedd">
                             <thead class="thead-dark">
                                 <tr>
+                                    <th>Id</th>
                                     <th>Id_Usuario</th>
                                     <th>Id_Permiso</th>
+                                    <th>Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -130,6 +132,7 @@
                        
                        while ($row = mysqli_fetch_array($result)) { ?>
                                 <tr>
+                                    <td><?php echo $row['id'] ?></td>
                                     <td><?php echo $row['id_usuario'] ?></td>
                                     <td><?php echo $row['id_permiso'] ?></td>
                                     <td>

@@ -146,7 +146,7 @@
 
                                                             $query_usuario = mysqli_query($conn, "SELECT id, nombre FROM usuarios");
                                                             $query_permiso = mysqli_query($conn, "SELECT id, nombre_permiso FROM permisos");
-                                                            $result_usuario = mysqli_num_rows( $query_usuario);
+                                                            $result = mysqli_num_rows( $query_usuario);
                                                             mysqli_close($conn);
                                                             ?> 
 
@@ -154,7 +154,7 @@
                                                         <option selected>Seleccione el usuario...</option>
                                                         <?php
 
-                                                         if($result_usuario > 0){
+                                                         if($result > 0){
                                                              while($usuario = mysqli_fetch_array($query_usuario)){
 
                                                           ?>
@@ -173,30 +173,18 @@
                                                            <label class="input-group-text" for="id_permiso"> <i class="fas fa-male"></i>Permiso</label>
                                                                 </div>
                                                                 <select class="custom-select" name="id_permiso" id="id_permiso">
-<<<<<<< HEAD
                                                            
                                                             <?php
 
-                                                            $query_permiso = mysqli_query($conn, "SELECT id, nombre_permisos FROM permisos");
-                                                            $result_permiso = mysqli_num_rows( $query_permiso);
-                                                            mysqli_close($conn);
+                                                            $result = mysqli_num_rows( $query_permiso);
+                                                       
                                                             ?> 
 
                                                     
-                                                        <option selected>Seleccione permiso...</option>
+                                                        <option selected>Seleccione el permiso...</option>
                                                         <?php
 
-                                                         if($result_permiso > 0){
-=======
-                                                                <option selected>Seleccione el permiso...</option>
-                                                              
-
-                                                                
-
-                                                        <?php
-
-                                                         if($result_usuario > 0){
->>>>>>> 488bb284bb25984cfdd1473d4eb1f9f60c5c63fa
+                                                         if($result > 0){
                                                              while($permiso = mysqli_fetch_array($query_permiso)){
 
                                                           ?>
@@ -209,13 +197,6 @@
                                                         </select>
                                                         
                                                          </div>
-<<<<<<< HEAD
-
-=======
-                                                               
-                                                       
-                                                        </div>
->>>>>>> 488bb284bb25984cfdd1473d4eb1f9f60c5c63fa
                                 
                                                         <input type="submit" class="btn btn-dark btn-block"
                                                             name="save_permisousario" value="Guardar">
