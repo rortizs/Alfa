@@ -92,7 +92,7 @@
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
                             ></a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproductos.html">Crear Producto</a><a class="nav-link" href="tablaproducto.html">Tabla Producto</a></nav>
+                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="../vistas/crearproductos.html">Crear Producto</a><a class="nav-link" href="../vistas/tablaproducto.html">Tabla Producto</a></nav>
                             </div> 
                     </div>
                     <div class="sb-sidenav-footer">
@@ -134,39 +134,22 @@
         $password2= $row['password2'];
     }
 }
-if (isset($_POST['update'])) {
-    $id = $_GET['id'];
-    $nombre= $_GET['nombre'];
-        $no_documento= $_GET['no_documento'];
-        $direccion= $_GET['direccion'];
-        $telefono= $_GET['telefono'];
-        $email= $_GET['email'];
-        $cargo= $_GET['cargo'];
-        $username= $_GET['username'];
-        $password= $_GET['password'];
-        $imagen= $_GET['imagen'];
-        $estado= $_GET['estado'];
-        $password2= $_GET['password2'];
-    $query = "UPDATE usuarios set nombre='$nombre', no_documento='$no_documento', direccion='$direccion', telefono='$telefono', email='$email', 
-    cargo='$cargo', username='$username', password='$password', imagen='$imagen', estado='$estado', password2='$password2'
-    WHERE id=$id";
-    mysqli_query($conn, $query);
-    $_SESSION['message'] = 'Usuario Actualizado';
-    $_SESSION['message_type'] = 'success';
-    header('Location: ../vistas/tablausuario.php');
-  }
+
 ?>
+<form action="../modelos/edit_user_proceso.php?id=<?php echo $_GET['id']; ?>" method="POST">
                         <h4 class="mb-3">Ingresar datos a modificar </h4>
                                             <form class="needs-validation" novalidate>
                                                 <div class="row">
 
-                                                <form action="edit_user.php?id=<?php echo $_GET['id']; ?>" method="POST">
+                                                
+        
                                                     <div class="col-md-6 mb-3">
                                                         <i class="fas fa-user-edit"></i>
                                                         <label for="nombre">Nombre Completo</label>
-                                                        
+                                                       
                                                         <input type="text" name="nombre" class="form-control"
                                                             placeholder="" autofocus value="<?php echo $nombre; ?>">
+                                                          
                                                           
                                                         <div class="invalid-feedback">
                                                             Se requiere un nombre válido.
@@ -247,12 +230,28 @@ if (isset($_POST['update'])) {
                                                     <input type="password" name="password2" class="form-control"
                                                         placeholder="" autofocus value="<?php echo $password2; ?>">
                                                 </div>
+                                             
+                                                
                                                 <button class="btn btn-dark" name="update">
-               Actualizar
-              </button>
+                                                 Actualizar
+                                                 </button>
+                                                 </div>
+                                               
+              <br></br>
 
       </form>
       </div>
     </div>
   </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/datatables-demo.js"></script>
+    </body>
+</html>                                           

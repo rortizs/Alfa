@@ -1,5 +1,4 @@
-<?php
-     include ("db_user.php");
+<?php include ("../modelos/db_user.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,9 +92,8 @@
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
                             ></a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="crearproductos.html">Crear Producto</a><a class="nav-link" href="tablaproducto.html">Tabla Producto</a></nav>
+                                <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="../vistas/crearproductos.html">Crear Producto</a><a class="nav-link" href="../vistas/tablaproducto.html">Tabla Producto</a></nav>
                             </div> 
-
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small"></div>
@@ -108,28 +106,39 @@
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">DETALLES MH</h1>
-<?php 
-    if(isset($_GET['id'])){
-       $id = $_GET ['id'];
-       $query = "DELETE  FROM usuarios WHERE id= $id";
-       $result =mysqli_query($conn, $query);
-       if (!$result){
-           die("Query Failed");
 
-       }
-       $_SESSION ['message'] = 'Usuario Eliminado';
-       $_SESSION ['message_type'] = 'dark';  
-    }
-?>
+
+    
+
+<?php
+
+    $id = $_GET['id'];
+    $nombre= $_POST['nombre'];
+        $no_documento= $_POST['no_documento'];
+        $direccion= $_POST['direccion'];
+        $telefono= $_POST['telefono'];
+        $email= $_POST['email'];
+        $cargo= $_POST['cargo'];
+        $username= $_POST['username'];
+        $password= $_POST['password'];
+        $imagen= $_POST['imagen'];
+        $estado= $_POST['estado'];
+        $password2= $_POST['password2'];
+    $query = "UPDATE usuarios set nombre='$nombre', no_documento='$no_documento', direccion='$direccion', telefono='$telefono', email='$email', 
+    cargo='$cargo', username='$username', password='$password', imagen='$imagen', estado='$estado', password2='$password2' WHERE id=$id";
+    mysqli_query($conn, $query);
+
+  
+  ?>
 <div class="alert alert-dark" role="alert">
-  USUARIO ELIMINADO
+  USUARIO MODIFICADO 
 </div>
-<form action="../vistas/tablausuario.php" method="post">
-<input type="submit" class="btn btn-dark"name="volver" value="Volver">
+
+
+  <form action="../vistas/tablausuario.php" method="post">
+<input type="submit" class="btn btn-dark btn-center"name="volver" value="Volver">
 </form>
-                        
-</div>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
