@@ -13,7 +13,7 @@ if (isset($_POST['save_user'])){
      $cargo = $_POST['cargo'];
      $username = $_POST['username'];
      $password = $_POST['password'];
-     $imagen = $_POST['imagen'];
+     $imagen= addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
      $estado = $_POST['estado'];
      $password2 = $_POST['password2'];
     $ocultar=password_hash($password, PASSWORD_DEFAULT);

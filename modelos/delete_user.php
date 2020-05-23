@@ -124,8 +124,11 @@
 <div class="alert alert-dark" role="alert">
   USUARIO ELIMINADO
 </div>
+
 <form action="../vistas/tablausuario.php" method="post">
+<center>
 <input type="submit" class="btn btn-dark"name="volver" value="Volver">
+</center>
 </form>
                         
 </div>

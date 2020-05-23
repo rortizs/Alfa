@@ -121,22 +121,28 @@
         $cargo= $_POST['cargo'];
         $username= $_POST['username'];
         $password= $_POST['password'];
-        $imagen= $_POST['imagen'];
+        $imagen= addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
         $estado= $_POST['estado'];
         $password2= $_POST['password2'];
+
+        
     $query = "UPDATE usuarios set nombre='$nombre', no_documento='$no_documento', direccion='$direccion', telefono='$telefono', email='$email', 
     cargo='$cargo', username='$username', password='$password', imagen='$imagen', estado='$estado', password2='$password2' WHERE id=$id";
     mysqli_query($conn, $query);
 
   
   ?>
+ 
 <div class="alert alert-dark" role="alert">
   USUARIO MODIFICADO 
+ 
 </div>
 
 
-  <form action="../vistas/tablausuario.php" method="post">
+  <form action="../vistas/tablausuario.php" method="post" >
+  <center>
 <input type="submit" class="btn btn-dark btn-center"name="volver" value="Volver">
+</center>
 </form>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

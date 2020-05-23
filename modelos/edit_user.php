@@ -136,7 +136,7 @@
 }
 
 ?>
-<form action="../modelos/edit_user_proceso.php?id=<?php echo $_GET['id']; ?>" method="POST">
+<form action="../modelos/edit_user_proceso.php?id=<?php echo $_GET['id']; ?>" method="POST" enctype="multipart/form-data" >
                         <h4 class="mb-3">Ingresar datos a modificar </h4>
                                             <form class="needs-validation" novalidate>
                                                 <div class="row">
@@ -215,8 +215,10 @@
                                                 <div class="form-group">
                                                     <i class="far fa-image"></i>
                                                     <label for="imagen" class="control-label">Imagen</label>
-                                                    <input type="text" name="imagen" class="form-control" placeholder=""
-                                                        autofocus value="<?php echo $imagen; ?>">
+                                                    <img height="50px"src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/>
+                                                    <input type="file" 
+                                                     name="imagen" class="form-control" placeholder=""
+                                                        autofocus >
                                                 </div>
                                                 <div class="form-group">
                                                     <i class="fas fa-battery-three-quarters"></i>
@@ -231,11 +233,11 @@
                                                         placeholder="" autofocus value="<?php echo $password2; ?>">
                                                 </div>
                                              
-                                                
+                                                <center>
                                                 <button class="btn btn-dark" name="update">
                                                  Actualizar
                                                  </button>
-                                                 </div>
+                                                 </center>
                                                
               <br></br>
 
