@@ -213,6 +213,12 @@
                                                         placeholder="" autofocus value="<?php echo $password; ?>">
                                                 </div>
                                                 <div class="form-group">
+                                                    <i class="fas fa-lock"></i>
+                                                    <label for="password2" class="control-label">Confirmar Contraseña</label>
+                                                    <input type="password" name="password2" class="form-control"
+                                                        placeholder="" autofocus value="<?php echo $password2; ?>">
+                                                </div>
+                                                <div class="form-group">
                                                     <i class="far fa-image"></i>
                                                     <label for="imagen" class="control-label">Imagen</label>
                                                     <img height="50px"src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/>
@@ -226,12 +232,7 @@
                                                     <input type="text" name="estado" class="form-control" placeholder=""
                                                         autofocus value="<?php echo $estado; ?>">
                                                 </div>
-                                                <div class="form-group">
-                                                    <i class="fas fa-lock"></i>
-                                                    <label for="password2" class="control-label">Contraseña</label>
-                                                    <input type="password" name="password2" class="form-control"
-                                                        placeholder="" autofocus value="<?php echo $password2; ?>">
-                                                </div>
+                                                
                                              
                                                 <center>
                                                 <button class="btn btn-dark" name="update">

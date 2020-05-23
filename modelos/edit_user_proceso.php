@@ -121,13 +121,14 @@
         $cargo= $_POST['cargo'];
         $username= $_POST['username'];
         $password= $_POST['password'];
+        $password2= $_POST['password2'];
         $imagen= addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
         $estado= $_POST['estado'];
-        $password2= $_POST['password2'];
+       
 
         
     $query = "UPDATE usuarios set nombre='$nombre', no_documento='$no_documento', direccion='$direccion', telefono='$telefono', email='$email', 
-    cargo='$cargo', username='$username', password='$password', imagen='$imagen', estado='$estado', password2='$password2' WHERE id=$id";
+    cargo='$cargo', username='$username', password='$password', password2='$password2', imagen='$imagen', estado='$estado' WHERE id=$id";
     mysqli_query($conn, $query);
 
   

@@ -129,7 +129,6 @@
                                     <th>Contraseña</th>
                                     <th>Imagen</th>
                                     <th>Estado</th>
-                                    <th>Contraseña</th>
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
@@ -150,7 +149,7 @@
                                     <td><?php echo $row['password'] ?></td>
                                     <td><img height="50px"src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
                                     <td><?php echo $row['estado'] ?></td>
-                                    <td><?php echo $row['password2'] ?></td>
+                        
                                     <td>
                                         <a href="../modelos/edit_user.php?id=<?php echo $row['id']?>" class="btn btn-dark">
                                         <i class="fas fa-edit"></i>

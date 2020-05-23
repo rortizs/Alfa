@@ -13,14 +13,14 @@ if (isset($_POST['save_user'])){
      $cargo = $_POST['cargo'];
      $username = $_POST['username'];
      $password = $_POST['password'];
+     $password2 = $_POST['password2'];
      $imagen= addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
      $estado = $_POST['estado'];
-     $password2 = $_POST['password2'];
     $ocultar=password_hash($password, PASSWORD_DEFAULT);
     $ocultar2=password_hash($password2, PASSWORD_DEFAULT);
 
-     $query = "INSERT INTO  usuarios(nombre, no_documento, direccion, telefono, email, cargo, username, password, imagen, estado, password2) 
-    VALUES ('$nombre', '$no_documento', '$direccion', '$telefono', '$email', '$cargo', '$username', '$ocultar', '$imagen', '$estado', '$ocultar2')";
+     $query = "INSERT INTO  usuarios(nombre, no_documento, direccion, telefono, email, cargo, username, password, password2, imagen, estado) 
+    VALUES ('$nombre', '$no_documento', '$direccion', '$telefono', '$email', '$cargo', '$username', '$ocultar', '$ocultar2', '$imagen', '$estado')";
      $result = mysqli_query ($conn, $query);
      if (!$result){
          die("Query Failed");
