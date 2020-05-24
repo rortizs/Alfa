@@ -116,31 +116,34 @@
             <main>
                 <div class="container-fluid">
                     <h1 class="mt-4">DETALLES MH</h1>
-<?php 
-    if(isset($_GET['id'])){
-       $id = $_GET ['id'];
-       $query = "DELETE  FROM usuarios WHERE id= $id";
-       $result =mysqli_query($conn, $query);
-       if (!$result){
-           die("Query Failed");
 
-       }
-       $_SESSION ['message'] = 'Usuario Eliminado';
-       $_SESSION ['message_type'] = 'dark';  
-    }
+
+
+<?php
+
+$id = $_GET['id'];
+$nombre_categoria= $_POST['nombre_categoria'];
+    $descripcion= $_POST['descripcion'];
+    $estado_categoria= $_POST['estado_categoria'];
+    
+$query = "UPDATE categorias set nombre_categoria='$nombre_categoria', descripcion='$descripcion', estado_categoria='$estado_categoria' WHERE id=$id";
+mysqli_query($conn, $query);
+
+
 ?>
+
 <div class="alert alert-dark" role="alert">
-  USUARIO ELIMINADO
+CATEGORIA MODIFICADA
+
 </div>
 
-<form action="../vistas/tablausuario.php" method="post">
+
+<form action="../vistas/tablacategoria.php" method="post" >
 <center>
-<input type="submit" class="btn btn-dark"name="volver" value="Volver">
+<input type="submit" class="btn btn-dark btn-center"name="volver" value="Volver">
 </center>
 </form>
-                        
-</div>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>

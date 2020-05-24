@@ -128,7 +128,7 @@
                             <tbody>
 
                                 <?php 
-
+ 
                                                                                              
                                                 $query = "SELECT * FROM permisos ";
                                                 $result_permisos = mysqli_query($conn, $query);

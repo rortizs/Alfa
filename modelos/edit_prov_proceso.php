@@ -1,4 +1,5 @@
-<?php include ("../modelos/db_user.php")
+
+     <?php include ("../modelos/db_user.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -116,31 +117,36 @@
             <main>
                 <div class="container-fluid">
                     <h1 class="mt-4">DETALLES MH</h1>
-<?php 
-    if(isset($_GET['id'])){
-       $id = $_GET ['id'];
-       $query = "DELETE  FROM usuarios WHERE id= $id";
-       $result =mysqli_query($conn, $query);
-       if (!$result){
-           die("Query Failed");
 
-       }
-       $_SESSION ['message'] = 'Usuario Eliminado';
-       $_SESSION ['message_type'] = 'dark';  
-    }
-?>
-<div class="alert alert-dark" role="alert">
-  USUARIO ELIMINADO
+<?php
+   
+        $id = $_GET['id'];
+        $nombre = $_POST['nombre'];
+        $numero_documento = $_POST['numero_documento'];
+        $direccion = $_POST['direccion'];
+        $telefono = $_POST['telefono'];
+        $email = $_POST['email'];
+      
+      
+        $query = "UPDATE proveedores set nombre = '$nombre', numero_documento = '$numero_documento', direccion = '$direccion', telefono = '$telefono',
+        email = '$email'  
+       WHERE id=$id";
+        mysqli_query($conn, $query);
+   
+      
+      ?>
+    <div class="alert alert-dark" role="alert">
+  PROVEEDOR MODIFICADO 
+ 
 </div>
 
-<form action="../vistas/tablausuario.php" method="post">
-<center>
-<input type="submit" class="btn btn-dark"name="volver" value="Volver">
+
+  <form action="../vistas/tablaproveedor.php" method="post" >
+  <center>
+<input type="submit" class="btn btn-dark btn-center"name="volver" value="Volver">
 </center>
 </form>
-                        
-</div>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
