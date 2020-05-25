@@ -7,8 +7,14 @@ $userSession = new UserSession();
 $user = new User();
 
 if(isset($_SESSION['user'])) {
-    echo 'hay sesion';
+    //echo 'hay sesion';
+
+    $user->setUser($userSession->getCurrentUser());
+    header('location: vistas/menu.php');
 } else if(isset($_POST['username']) && isset($_POST['password'])) {
+
+
+
     $userForm = $_POST['username'];
     $passForm = $_POST['password'];
 
@@ -19,7 +25,7 @@ if(isset($_SESSION['user'])) {
         $user->setUser($userForm);
 
         // include_once 'vistas/home.php';
-        header('location: vistas/menu.html');
+        header('location: vistas/menu.php');
     } else {
         // echo "Usuario y/o Contraseña incorrecta";
         $errorLogin = "Usuario y/o Contraseña es incorrecto";
