@@ -213,7 +213,7 @@
                                                       </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        ¿Desea guardar el Permiso Usuario?
+                                                        ¿Desea guardar el Permiso del Usuario?
                                                     </div>
                                                     <div class="modal-footer">
                                                    
