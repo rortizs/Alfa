@@ -1,6 +1,5 @@
 <?php include ("../modelos/db_user.php")
 ?>
-
 <html lang="es">
 
 <head>
@@ -105,7 +104,7 @@
                                     Producto</a><a class="nav-link" href="tablaproducto.php"><i class="fas fa-table"></i>Tabla Producto</a></nav>
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer">
+                    <div style="position: absolute;bottom: 0;width: -webkit-fill-available;" class="sb-sidenav-footer">
                         DETALLES MH
                     </div>
                 </div>
@@ -114,13 +113,12 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <h1 class="mt-4">DETALLES MH</h1>
-
+                    <h1 class="mt-4"><i class="fas fa-gifts"></i>Crear Producto</h1>
+                    <hr>
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-10">
-
-                                <?php if (isset($_SESSION['message'])){ ?>
+                            <div class="col-md-12">
+                                <!-- <?php if (isset($_SESSION['message'])){ ?>
                                 <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show"
                                     role="alert">
                                     <?= $_SESSION['message'] ?>
@@ -128,13 +126,12 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <?php session_unset();} ?>
+                                <?php session_unset();} ?> -->
                                 <div class="card card-body">
-                                    <form action="../modelos/save_producto.php" method="POST">
+                                    <form action="../modelos/save_producto.php" method="POST" enctype="multipart/form-data">
                                         <div class="col-md-8 order-md-1">
                                             <h4 class="mb-3">Ingresar datos para la creacion de Productos</h4>
-                                            <form class="needs-validation" novalidate></form>
-                                                <form action="" method="POST" enctype="multipart/form-data">
+                                            <form class="needs-validation" novalidate>
                                                 <div class="row">
                                                     <div class="col-md-6 mb-3">
                                                         <i class="fas fa-gift"></i>
@@ -148,7 +145,7 @@
                                                     <div class="col-md-6 mb-3">
                                                         <i class="fas fa-barcode"></i>
                                                         <label for="codigo">Codigo</label>
-                                                        <input type="number" REQUIRED name="codigo" class="form-control"
+                                                        <input type="text" REQUIRED name="codigo" class="form-control"
                                                             placeholder="" autofocus>
                                                         <div class="invalid-feedback">
                                                             Se requiere un codigo válido.
@@ -168,68 +165,66 @@
                                                     <input type="text" REQUIRED name="descripcion" class="form-control"
                                                         placeholder="" autofocus>
                                                 </div>
-                                                <div class="photo">
+                                                <div class="form-group">
                                                     <i class="far fa-image"></i>
-                                                    <label for="imagen">Imagen</label>
-                                                        <label for="imagen"></label>
-                                                        </div>
-                                                        <div class="upimg">
-                                                        <input type="file" REQUIRED name="imagen" id="imagen">
-                                                        </div>
-                                                        <div id="form_alert"></div>
-                                                </div> <br/>
+                                                        <label>Imagen</label>
+                                                        <br></br>
+                                                        <input type="file" 
+                                                         name="imagen"  REQUIRED  >
+                                                        </div><br/>
 
-                                                
-                                                    <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
-                                                        Guardar
+                                       
+                                            <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
+                                                Guardar
+                                              </button>
+                                              
+                                              <!-- Modal -->
+                                              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i>AVISO</h5>
+                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
                                                       </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        ¿Desea guardar el producto?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <input type="submit" class="btn btn-dark btn-block" name="save_producto"
+                                            value="Guardar">
+                                                      <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
                                                       
-                                                      <!-- Modal -->
-                                                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog" role="document">
-                                                          <div class="modal-content">
-                                                            <div class="modal-header">
-                                                              <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i>AVISO</h5>
-                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                              </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                ¿Desea guardar el Producto?
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <input type="submit" class="btn btn-dark btn-block" name="save_producto"
-                                                    value="Guardar">
-                                                              <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
-                                                              
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                            </form>
-                                        </form>
-
-                                        </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                    </form>
+                                </form>
 
                                 </div>
 
-
                             </div>
-                            <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-                            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-                                crossorigin="anonymous"></script>
-                            <script src="../public/js/scripts.js"></script>
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
-                                crossorigin="anonymous">
-                            </script>
-                            <script src="../public/assets/demo/chart-area-demo.js"></script>
-                            <script src="../public/assets/demo/chart-bar-demo.js"></script>
-                            <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"
-                                crossorigin="anonymous"></script>
-                            <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"
-                                crossorigin="anonymous">
-                            </script>
-                            <script src="../public/assets/demo/datatables-demo.js"></script>
+
+
+
+
+
+                        </div>
+                        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                            crossorigin="anonymous"></script>
+                        <script src="js/scripts.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+                            crossorigin="anonymous"></script>
+                        <script src="assets/demo/chart-area-demo.js"></script>
+                        <script src="assets/demo/chart-bar-demo.js"></script>
+                        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"
+                            crossorigin="anonymous"></script>
+                        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"
+                            crossorigin="anonymous"></script>
+                        <script src="assets/demo/datatables-demo.js"></script>
 </body>
 
 </html>

@@ -138,7 +138,7 @@
                                     <td><?php echo $row['codigo'] ?></td>
                                     <td><?php echo $row['stock'] ?></td>
                                     <td><?php echo $row['descripcion'] ?></td>
-                                    <td><?php echo $row['imagen'] ?></td>
+                                    <td><img height="50px"src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
                                     <td>
                                   
                                         <a href="../modelos/edit_producto.php?id=<?php echo $row['id']?>" class="btn btn-dark">
