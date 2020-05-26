@@ -16,8 +16,8 @@ if (isset($_POST['save_user'])){
      $password2 = $_POST['password2'];
      $imagen= addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
      $estado = $_POST['estado'];
-    $ocultar=password_hash($password, PASSWORD_DEFAULT);
-    $ocultar2=password_hash($password2, PASSWORD_DEFAULT);
+    $ocultar=md5($password);
+    $ocultar2=md5($password2);
 
      $query = "INSERT INTO  usuarios(nombre, no_documento, direccion, telefono, email, cargo, username, password, password2, imagen, estado) 
     VALUES ('$nombre', '$no_documento', '$direccion', '$telefono', '$email', '$cargo', '$username', '$ocultar', '$ocultar2', '$imagen', '$estado')";
