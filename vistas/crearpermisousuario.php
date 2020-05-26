@@ -214,7 +214,7 @@
                                                       </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        ¿Desea guardar la Categoría?
+                                                        ¿Desea guardar el permiso del usuario?
                                                     </div>
                                                     <div class="modal-footer">
                                                    
