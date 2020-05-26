@@ -198,8 +198,34 @@
                                                         
                                                          </div>
                                 
-                                                        <input type="submit" class="btn btn-dark btn-block"
+                                                       
+                                                            <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
+                                                Guardar
+                                              </button>
+                                              
+                                              <!-- Modal -->
+                                              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i>AVISO</h5>
+                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                      </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        ¿Desea guardar la Categoría?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                   
+                                            <input type="submit" class="btn btn-dark btn-block"
                                                             name="save_permisousario" value="Guardar">
+                                                      <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
+                                                      
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
                                                 </form>
     
                                             </div>
