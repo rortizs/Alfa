@@ -117,87 +117,37 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">DETALLES MH</h1>
 
-                    <?php
-   if(isset($_GET['id'])){
-    $id= $_GET['id'];
-    $query = "SELECT * FROM productos WHERE id=$id";
-    $result=mysqli_query($conn, $query);
-    if(mysqli_num_rows($result)==1){
-        $row = mysqli_fetch_array($result);
-        $nombre= $row['nombre'];
-        $codigo= $row['codigo'];
-        $stock= $row['stock'];
-        $descripcion= $row['descripcion'];
-        $imagen= $row['imagen'];
+
+    
+
+<?php
+
+    $id = $_GET['id'];
+    $nombre= $_POST['nombre'];
+    $codigo = $_POST['codigo'];
+    $stock= $_POST['stock'];
+    $descripcion= $_POST['descripcion'];
+    $imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
+    
        
-    }
-}
+    $query = "UPDATE productos set nombre='$nombre', codigo='$codigo', stock='$stock', descripcion='$descripcion', 
+    imagen='$imagen'  WHERE id=$id";
+    mysqli_query($conn, $query);
 
-?>
-<form action="../modelos/edit_producto_proceso.php?id=<?php echo $_GET['id']; ?>" method="POST" enctype="multipart/form-data" >
-<h4 class="mb-3">Ingresar datos a modificar </h4>
-    <form class="needs-validation" novalidate>
-    <div class="row">
-    <div class="col-md-6 mb-3">
-
-    <div class="row">
-                                                    <div class="col-md-6 mb-3">
-                                                        <i class="fas fa-gift"></i>
-                                                        <label for="nombre">Nombre del Producto</label>
-                                                        <input type="text" REQUIRED name="nombre" class="form-control"
-                                                            placeholder="" autofocus value="<?php echo $nombre; ?>">
-                                                        <div class="invalid-feedback">
-                                                            Se requiere un nombre válido.
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6 mb-3">
-                                                        <i class="fas fa-barcode"></i>
-                                                        <label for="codigo">Codigo</label>
-                                                        <input type="text" REQUIRED name="codigo" class="form-control"
-                                                            placeholder="" autofocus  value="<?php echo $codigo; ?>">
-                                                        <div class="invalid-feedback">
-                                                            Se requiere un codigo válido.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <i class="fab fa-stack-overflow"></i>
-                                                    <label for="stock" class="control-label">Stock</label>
-                                                    <input type="text" REQUIRED name="stock" class="form-control"
-                                                        placeholder="" autofocus value="<?php echo $stock; ?>">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <i class="far fa-comment"></i>
-                                                    <label for="descripcion" class="control-label">Descripcion</label>
-                                                    <input type="text" REQUIRED name="descripcion" class="form-control"
-                                                        placeholder="" autofocus value="<?php echo $descripcion; ?>">
-                                            
-                                                  </div>
-                                                  <div class="form-group">
-                                                    <i class="far fa-image"></i>
-                                                    <label for="imagen" class="control-label">Imagen</label>
-                                                    <img height="50px"src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/>
-                                                    <input type="file" 
-                                                     name="imagen" class="form-control" placeholder=""
-                                                        autofocus >
-                                                </div>
-                                             
-                                             
-                                                <center>
-                                                <button class="btn btn-dark" name="update">
-                                                 Actualizar
-                                                 </button>
-                                                 </center>
-                                               
-              <br></br>
-
-      </form>
-      </div>
-    </div>
-  </div>
+  
+  ?>
+ 
+<div class="alert alert-dark" role="alert">
+ PRODUCTO MODIFICADO 
+ 
 </div>
+
+
+  <form action="../vistas/tablaproducto.php" method="post" >
+  <center>
+<input type="submit" class="btn btn-dark btn-center"name="volver" value="Volver">
+</center>
+</form>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
@@ -208,4 +158,4 @@
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/datatables-demo.js"></script>
     </body>
-</html>   
+</html>
