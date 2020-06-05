@@ -13,10 +13,11 @@ class UserSession {
         return $_SESSION['user'];
     }
 
-    public function closeSession() {
+    public function closeSession(){
         session_unset();
         session_destroy();
     }
+
 }
 
 ?>
