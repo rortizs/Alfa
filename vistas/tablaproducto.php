@@ -140,7 +140,8 @@
                                     <td><?php echo $row['codigo'] ?></td>
                                     <td><?php echo $row['stock'] ?></td>
                                     <td><?php echo $row['descripcion'] ?></td>
-                                    <td><img height="50px"src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
+                                    <td><img upload_max_filesize = 2M post_max_size = 2M 
+                                    height="500px"src="data:image/jpg/png;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
                                     <td>
                                   
                                         <a href="../modelos/edit_producto.php?id=<?php echo $row['id']?>" class="btn btn-dark">
