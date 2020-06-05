@@ -140,8 +140,12 @@
                                     <td><?php echo $row['codigo'] ?></td>
                                     <td><?php echo $row['stock'] ?></td>
                                     <td><?php echo $row['descripcion'] ?></td>
+                                    if ($row['imagen'] < 2M)){?>
                                     <td><img upload_max_filesize = 2M post_max_size = 2M 
                                     height="500px"src="data:image/jpg/png;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
+                                   }
+                                   else{
+                                  <th> Imagen demasiado grande </th>
                                     <td>
                                   
                                         <a href="../modelos/edit_producto.php?id=<?php echo $row['id']?>" class="btn btn-dark">
@@ -171,11 +175,12 @@
                                         
                                         </a>
                                                       <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
-                                                      
+                                     
                                                     </div>
                                                   </div>
                                                 </div>
                                               </div>
+                                   }
                                     </td>
                                 </tr>
 
