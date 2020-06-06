@@ -119,18 +119,20 @@
 <?php
 
 
-    if(isset($_GET['id'])){
-       $id = $_GET ['id'];
-       $query = "DELETE  FROM categorias WHERE id= $id";
-       $result =mysqli_query($conn, $query);
-       if (!$result){
+    $row = $_REQUEST['id'];
+       $consulta = "UPDATE categorias 
+                     SET 
+                     estado_categoria = 0
+                    WHERE 
+                     id= '$row'";
+        mysqli_query($conn, $consulta);
+       if (!$consulta){
            die("Query Failed");
 
        }
        $_SESSION ['message'] = 'Categoría Eliminada';
        $_SESSION ['message_type'] = 'dark'; 
       
-    }
 ?>
 
 <form action="../vistas/tablacategoria.php" method="post">
