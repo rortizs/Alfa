@@ -23,7 +23,7 @@ if(isset($_SESSION['user'])) {
         // echo "si coinside";
         $userSession->setCurrentUser($userForm);
         $user->setUser($userForm);
-
+        
         // include_once 'vistas/home.php';
         header('location: vistas/menu.php');
     } else {

@@ -114,7 +114,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <h1 class="mt-4"> <i class="fas fa-clipboard-check"></i>Crear Permiso Usuario</h1>
+                    <h1 class="mt-4">Crear Permiso Usuario <i style="right: 30px; position: absolute;" class="fas fa-clipboard-check"></i></h1>
                     <hr>
                     <div class="container-fluid">
                         <div class="row">
@@ -131,20 +131,20 @@
                                 
                                 <div class="card card-body">
                                     <form action="../modelos/save_permisousuario.php" method="POST" enctype="multipart/form-data">
-                                            <div class="col-md-8 order-md-1">
-                                                <h4 class="mb-3"><i class="fas fa-male"></i>Ingresar datos para la creación del permiso </h4>
+                                            <div class="col-md-12 order-md-1">
+                                                <h4 class="mb-3"></i>Ingresar datos para la creación del permiso </h4>
                                                 <form class="needs-validation" novalidate>
                                                     
                                        
                                                                  <div class="input-group mb-3">
                                                                <div class="input-group-prepend">
-                                                           <label class="input-group-text" for="id_usuario"> <i class="fas fa-male"></i>Usuario</label>
+                                                           <label class="input-group-text" for="id_usuario">Usuario</label>
                                                                 </div>
                                                                 <select class="custom-select" name="id_usuario" id="id_usuario">
                                                            
                                                             <?php
 
-                                                            $query_usuario = mysqli_query($conn, "SELECT id, nombre FROM usuarios");
+                                                            $query_usuario = mysqli_query($conn, "SELECT id, username FROM usuarios");
                                                             $query_permiso = mysqli_query($conn, "SELECT id, nombre_permiso FROM permisos");
                                                             $result = mysqli_num_rows( $query_usuario);
                                                             mysqli_close($conn);
@@ -159,7 +159,7 @@
 
                                                           ?>
                                                          
-                                                          <option value="<?php echo $usuario['id']; ?>"><?php echo $usuario['nombre']; ?> </option>
+                                                          <option value="<?php echo $usuario['id']; ?>"><?php echo $usuario['username']; ?> </option>
                                                           <?php
                                                              }
                                                          }
@@ -170,7 +170,7 @@
 
                                                          <div class="input-group mb-3">
                                                                <div class="input-group-prepend">
-                                                           <label class="input-group-text" for="id_permiso"> <i class="fas fa-male"></i>Permiso</label>
+                                                           <label class="input-group-text" for="id_permiso">Permiso</label>
                                                                 </div>
                                                                 <select class="custom-select" name="id_permiso" id="id_permiso">
                                                            
@@ -197,11 +197,18 @@
                                                         </select>
                                                         
                                                          </div>
-                                
-                                                       
-                                                            <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
-                                                Guardar
-                                              </button>
+                                                        <div class="text-center col-md-12">
+                                                        <span>
+                                                            <?php
+                                                                if(isset($_SESSION['mensaje'])){
+                                                                    echo $_SESSION['mensaje'];
+                                                                }
+                                                                ?>
+                                                            </span>
+                                                        </div> 
+                                                       <div class="text-center col-md-12">
+                                                            <button type="button" class="btn btn-dark col-md-10" data-toggle="modal" data-target="#exampleModal">Guardar <i class="far fa-save"></i></button>
+                                                       </div>
                                               
                                               <!-- Modal -->
                                               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -219,7 +226,7 @@
                                                     <div class="modal-footer">
                                                    
                                             <input type="submit" class="btn btn-dark btn-block"
-                                                            name="save_permisousario" value="Guardar">
+                                                            name="save_permisousuario" value="Guardar">
                                                       <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
                                                       
                                                     </div>

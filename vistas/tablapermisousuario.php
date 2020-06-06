@@ -121,22 +121,24 @@
                         <table style="width: 100%;" class="table table-stripedd">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Id_Usuario</th>
-                                    <th>Id_Permiso</th>
+                                    <th>ID</th>
+                                    <th>Usuario</th>
+                                    <th>Nombre usuario</th>
+                                    <th>Permiso</th>
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                       $query = "SELECT * FROM permisos_usuario";
+                       $query = "SELECT pu.id, us.username, us.nombre, pe.nombre_permiso FROM `permisos_usuario` pu INNER JOIN `usuarios` us on pu.id_usuario = us.id INNER JOIN `permisos` pe on pu.id_permiso = pe.id";
                        $result = mysqli_query($conn, $query);
                        
                        while ($row = mysqli_fetch_array($result)) { ?>
                                 <tr>
                                     <td><?php echo $row['id'] ?></td>
-                                    <td><?php echo $row['id_usuario'] ?></td>
-                                    <td><?php echo $row['id_permiso'] ?></td>
+                                    <td><?php echo $row['username'] ?></td>
+                                    <td><?php echo $row['nombre'] ?></td>
+                                    <td><?php echo $row['nombre_permiso'] ?></td>
                                     <td>
                                     <a href="../modelos/edit_user.php?id=<?php echo $row['id']?>" class="btn btn-dark">
                                         <i class="fas fa-edit"></i>
