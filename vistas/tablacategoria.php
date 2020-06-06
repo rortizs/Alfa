@@ -122,20 +122,18 @@
                                 <tr>
                                     <th>Nombre Categoria</th>
                                     <th>Descripcion</th>
-                                    <th>Estado</th>
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                       $query = "SELECT * FROM categorias";
+                       $query = "SELECT * FROM categorias WHERE estado_categoria = 1";
                        $result = mysqli_query($conn, $query);
                        
                        while ($row = mysqli_fetch_array($result)) { ?>
                                 <tr>
                                     <td><?php echo $row['nombre_categoria'] ?></td>
                                     <td><?php echo $row['descripcion'] ?></td>
-                                    <td><?php echo $row['estado_categoria'] ?></td>
                                     <td>
                                     <a href="../modelos/edit_categoria.php?id=<?php echo $row['id']?>" class="btn btn-dark">
                                         <i class="fas fa-edit"></i>
